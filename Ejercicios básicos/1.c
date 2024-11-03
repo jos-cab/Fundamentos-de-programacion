@@ -5,17 +5,20 @@ Solicitarle los datos de entrada al usuario.
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int base, altura, superficie;
+    unsigned int base, altura;
+    double superficie;
 
     printf("Ingrese la base: ");
-    scanf("%i", &base);
+    scanf("%u", &base);
 
     printf("Ingrese la altura: ");
-    scanf("%i", &altura);
+    scanf("%u", &altura);
 
-    superficie = (base * altura) / 2;
+    superficie = (double)(base * altura) / 2;
 
-    printf("La superficie es: %i", superficie);
+    printf("La superficie es: %.2g", superficie);
+
+    return 0;
 }

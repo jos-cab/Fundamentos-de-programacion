@@ -1,17 +1,17 @@
 /*
-7) Ingresar un número (del 1 al 7) que representa un día de la semana, 
-escribir el nombre del día correspondiente. 
+7) Ingresar un número (del 1 al 7) que representa un día de la semana,
+escribir el nombre del día correspondiente.
 En el caso de haber ingresado un número fuera de rango indicarle del error al usuario.
 */
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int dia;
+    unsigned short int dia;
 
     printf("Ingrese un número para saber el día de la semana: ");
-    scanf("%i", &dia);
+    scanf("%hu", &dia);
 
     switch (dia)
     {
@@ -22,7 +22,8 @@ void main()
         case 5: printf("Viernes"); break;
         case 6: printf("Sábado"); break;
         case 7: printf("Domingo"); break;
-        
         default: printf("Número de día inválido"); break;
     }
+
+    return 0;
 }

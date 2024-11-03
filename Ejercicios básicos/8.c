@@ -1,11 +1,11 @@
 /*
-8) Ingresar un número (del 1 al 12) que representa un mes, 
+8) Ingresar un número (del 1 al 12) que representa un mes,
 indicar la cantidad de días de dicho mes.
 */
 
 #include <stdio.h>
 
-void main()
+int main()
 {
     int mes;
 
@@ -30,13 +30,15 @@ void main()
         case 11:
             printf("Este més tiene 30 días");
             break;
-        
+
         case 2:
             printf("Este més tiene 28/29 días");
             break;
-        
+
         default:
             printf("Número de mes inválido");
             break;
     }
+
+    return 0;
 }

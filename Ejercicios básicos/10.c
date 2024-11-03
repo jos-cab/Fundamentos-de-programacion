@@ -7,20 +7,22 @@ Considerar años bisiestos.
 #include <stdio.h>
 #include <stdbool.h>
 
-void main()
+int main()
 {
-    int dia, mes, año;
+    short int año; // Hay años negativos
+    unsigned short int dia, mes;
     bool fecha_es_valida;
+
     fecha_es_valida = false;
 
     printf("Ingrese una fecha para validarla \n");
 
     printf("Día: ");
-    scanf("%i", &dia);
+    scanf("%hu", &dia);
     printf("Mes: ");
-    scanf("%i", &mes);
+    scanf("%hu", &mes);
     printf("Año: ");
-    scanf("%i", &año);
+    scanf("%hi", &año);
 
     switch (mes)
     {
@@ -31,31 +33,28 @@ void main()
         case 8:
         case 10:
         case 12:
-            if (dia >= 1 && dia <= 31)
+            if (1 <= dia <= 31)
                 fecha_es_valida = true;
-
             break;
         
         case 4:
         case 6:
         case 9:
         case 11:
-            if (dia >= 1 && dia <= 30)
+            if (1 <= dia <= 30)
                 fecha_es_valida = true;
-                
             break;
         
         case 2:
             // año bisiesto
             if ((año % 4 == 0 && año % 100 != 0) || (año % 400 == 0))
-                if (dia >= 1 && dia <= 29)
+                if (1 <= dia <= 29)
                     fecha_es_valida = true;
 
             // año no bisiesto
             else
-                if (dia >= 1 && dia <= 28)
+                if (1 <= dia <= 28)
                     fecha_es_valida = true;
-            
             break;
     }
 
@@ -63,4 +62,6 @@ void main()
         printf("La fecha es válida");
     else
         printf("La fecha no es válida");
+
+    return 0;
 }

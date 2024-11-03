@@ -7,27 +7,36 @@ suponiendo que ambos son únicos.
 #include <stdio.h>
 
 #define CANTIDAD_NOTAS 4
+#define NOTA_MINIMA 0
+#define NOTA_MAXIMA 10
 
-void main()
+int main()
 {
-    int padron_menor_promedio, padron_mayor_promedio, padron, nota, i;
+    unsigned int padron_menor_promedio, padron_mayor_promedio, padron;
+    unsigned short int nota;
+    int i;
     float mayor_promedio, menor_promedio, promedio;
     char desea_continuar;
-    mayor_promedio = 0;
-    menor_promedio = 10; // Supongo que el mayor promedio posible es 10
+
+    mayor_promedio = NOTA_MINIMA;
+    menor_promedio = NOTA_MAXIMA;
 
     do
     {
         promedio = 0;
 
         printf("Ingrese el número de padrón: ");
-        scanf("%i", &padron);
+        scanf("%u", &padron);
 
         // Calculo promedio
         for (i = 0; i < CANTIDAD_NOTAS; i++)
         {
-            printf("Ingrese nota %i: ", i+1);
-            scanf("%i", &nota);
+            do
+            {
+                printf("Ingrese nota %i: ", i+1);
+                scanf("%hu", &nota);
+            } while (nota < NOTA_MINIMA || nota > NOTA_MAXIMA);
+            
             promedio += nota;
         }
 
@@ -38,8 +47,7 @@ void main()
         {
             mayor_promedio = promedio;
             padron_mayor_promedio = padron;
-        }
-
+        } 
         if (promedio < menor_promedio)
         {
             menor_promedio = promedio;
@@ -55,6 +63,8 @@ void main()
     } while (desea_continuar == 's');
     
 
-    printf("%i tiene el mayor promedio: %.2f \n", padron_mayor_promedio, mayor_promedio);
-    printf("%i tiene el menor promedio: %.2f \n", padron_menor_promedio, menor_promedio);
+    printf("%u tiene el mayor promedio: %.2g \n", padron_mayor_promedio, mayor_promedio);
+    printf("%u tiene el menor promedio: %.2g \n", padron_menor_promedio, menor_promedio);
+
+    return 0;
 }

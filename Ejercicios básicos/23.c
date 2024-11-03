@@ -22,16 +22,17 @@ y las condiciones establecidas se cumplen, el ascensor anunciará "ascensor en m
 #define PESO_MAXIMO 400
 #define CANTIDAD_PERSONAS_MAXIMO 6
 
-void main()
+int main()
 {
-    int cantidad_personas, peso_total, peso;
+    unsigned short int cantidad_personas, peso_total, peso;
+
     cantidad_personas = 0;
     peso_total = 0;
 
     do
     {
         printf("Ingrese el peso de la nueva persona (0 para salir): ");
-        scanf("%i", &peso);
+        scanf("%hu", &peso);
         
         if (peso > 0)
             cantidad_personas++;
@@ -45,4 +46,6 @@ void main()
         printf("Peso máximo excedido");
     else
         printf("ascensor en movimiento");
+
+    return 0;
 }

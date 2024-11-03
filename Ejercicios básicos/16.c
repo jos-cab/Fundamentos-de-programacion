@@ -11,11 +11,15 @@ Ejemplo:
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int numero, cantidad_pares, cantidad_impares, menor, mayor, digito;
+    unsigned short int numero, cantidad_pares, cantidad_impares, menor, mayor, digito;
+
     cantidad_pares = 0;
     cantidad_impares = 0;
+    // El menor se va a terminar actualizando ya que el mayor número de un dígito ingresado
+    // puede ser como mucho 9.
+    // Lo contrario sucede con el mayor dígito.
     menor = 9;
     mayor = 0;
 
@@ -24,7 +28,7 @@ void main()
     printf("b) El menor y el mayor dígito del número \n");
     
     printf("Número: ");
-    scanf("%i", &numero);
+    scanf("%hu", &numero);
 
     while (numero > 0)
     {
@@ -51,4 +55,6 @@ void main()
     printf("b)\n");
     printf("Menor: %i\n", menor);
     printf("Mayor: %i\n", mayor);
+
+    return 0;
 }

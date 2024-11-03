@@ -61,16 +61,17 @@ Suben 20 participantes de 70 Kg y 160 cm
 #define ALTURA_MAXIMA 190
 #define PESO_TOTAL_MAXIMO 1500
 
-void main()
+int main()
 {
-    int altura_centimetros, peso, cantidad_participantes, peso_total;
+    unsigned short int altura_centimetros, peso, cantidad_participantes, peso_total;
+
     cantidad_participantes = 0;
     peso_total = 0;
 
     do
     {
         printf("Ingrese el peso (0 para salir): ");
-        scanf("%i", &peso);
+        scanf("%hu", &peso);
 
         if (peso != 0)
             if (peso_total + peso > PESO_TOTAL_MAXIMO)
@@ -82,7 +83,7 @@ void main()
                 peso_total += peso;
                 
                 printf("Ingrese altura en centímetros: ");
-                scanf("%i", &altura_centimetros);
+                scanf("%hu", &altura_centimetros);
 
                 if (altura_centimetros < ALTURA_MINIMA || altura_centimetros > ALTURA_MAXIMA)
                 {
@@ -105,9 +106,11 @@ void main()
         if (peso_total == PESO_TOTAL_MAXIMO)
             printf("Iniciando juego automáticamente por alcanzar peso máximo \n");
         
-        printf("Iniciando juego con %i participantes", cantidad_participantes);
+        printf("Iniciando juego con %hu participantes", cantidad_participantes);
     } else
     {
         printf("No se puede iniciar el juego por superar el peso máximo");
     }
+
+    return 0;
 }

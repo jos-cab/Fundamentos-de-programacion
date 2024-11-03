@@ -4,18 +4,23 @@
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int n, i, j, termino;
+    int i; // Puede ser unsigned short int o size_t, pero para este curso a i siempre le asignaré tipo int
+    unsigned int n;
+    unsigned long int termino;
+
     termino = 1;
 
     printf("Ingrese n para calcular sucesión geométrica de razón 3: ");
-    scanf("%i", &n);
+    scanf("%u", &n);
 
     for (i = 0; i < n; i++)
     {
-        printf("%i ", termino);
+        printf("%lu ", termino);
         
         termino *= 3;
     }
+
+    return 0;
 }

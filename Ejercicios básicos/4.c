@@ -6,14 +6,17 @@ Usar fórmula [ n.(n+1) ] / 2
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int n, resultado;
+    unsigned int n;
+    unsigned long resultado;
 
     printf("Ingrese un número para mostrar suma de los primeros n numeros naturales: ");
-    scanf("%i", &n);
+    scanf("%u", &n);
     
     resultado = (n * (n + 1)) / 2;
 
-    printf("El resultado es: %i", resultado);
+    printf("El resultado es: %lu", resultado);
+
+    return 0;
 }

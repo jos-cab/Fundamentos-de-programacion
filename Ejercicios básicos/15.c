@@ -6,16 +6,21 @@ El ingreso de números finaliza cuando el usuario ingresa 0.
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int numero, mayor, menor, cantidad;
+    int numero, mayor, menor;
+    unsigned short int cantidad;
     float promedio;
-    mayor = -2147483648; // Menor entero posible para 32 bits
-    menor = 2147483647;  // Mayor entero posible para 32 bits
-    promedio = 0;
-    cantidad = 0;
 
-    do
+    // Primer ingreso para guardar mayor y menor
+    printf("Ingrese número (0 para salir): ");
+    scanf("%i", &numero);
+    mayor = numero;
+    menor = numero;
+    promedio = numero;
+    cantidad = 1;
+    
+    while (numero != 0)
     {
         printf("Ingrese número (0 para salir): ");
         scanf("%i", &numero);
@@ -24,24 +29,22 @@ void main()
         {
             if (numero < menor)
                 menor = numero;
-            if (numero > mayor)
+            else if (numero > mayor)
                 mayor = numero;
             
             promedio += numero;
             cantidad++;
         }
-    } while (numero != 0);
+    }
     
-    if (cantidad == 0)
-    {
-        menor = 0;
-        mayor = 0;
-    } else
+    if (cantidad != 0)
     {
         promedio /= cantidad;
     }
 
     printf("El mayor de la serie es: %i \n", mayor);
     printf("El menor de la serie es: %i \n", menor);
-    printf("El promedio de la serie es: %.2f \n", promedio);
+    printf("El promedio de la serie es: %.2g \n", promedio);
+
+    return 0;
 }

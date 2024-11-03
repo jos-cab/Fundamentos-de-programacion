@@ -7,92 +7,14 @@ Se indica fin de datos de entrada cuando día = 0.
 Muestre por pantalla el número de DNI del integrante más joven del grupo.
 */
 
-/*
-
 #include <stdio.h>
+#include <stdbool.h>
 
-// Las fechas ingresadas tienen que ser anteriores al 14/09/2024
-#define DIA_ACTUAL 14
-#define MES_ACTUAL 9
-#define AÑO_ACTUAL 2024
-
-void main()
+int main()
 {
-    int dia, mes, año, dni, dni_menor, menor;
-    menor = 2147483647; // Mayor entero posible para 32-bits
-
-    do
-    {
-        printf("Ingrese fecha de nacimiento \n");
-
-        printf("Día: ");
-        scanf("%i", &dia);
-
-        if (dia != 0)
-        {
-            printf("Mes: ");
-            scanf("%i", &mes);
-            printf("Año: ");
-            scanf("%i", &año);
-
-            printf("Ingrese DNI: ");
-            scanf("%i", &dni);
-
-            // Para encontrar la persona más joven, comparo cuántos días vivió cada uno
-            // NOTA: es un aproximado, ya que no tuve en cuenta años bisiestos
-            if ((AÑO_ACTUAL - año) * 365 + (MES_ACTUAL - mes) * 30 + (DIA_ACTUAL - dia) < menor)
-                dni_menor = dni;
-
-            printf("\n");
-        }
-    } while (dia != 0);
-
-    printf("El DNI del menor es: %i", dni_menor);
-}
-
-*/
-/*
-#include <stdio.h>
-
-void main() {
-    int dia, mes, año, dni, dni_menor;
-    dni_menor = 0;
-
-    do
-    {
-        printf("Ingrese fecha de nacimiento \n");
-
-        printf("Día: ");
-        scanf("%i", &dia);
-
-        if (dia != 0)
-        {
-            printf("Mes: ");
-            scanf("%i", &mes);
-            printf("Año: ");
-            scanf("%i", &año);
-
-            printf("Ingrese DNI: ");
-            scanf("%i", &dni);
-
-            if (dni > dni_menor)
-                dni_menor = dni;
-
-            printf("\n");
-        }
-    } while (dia != 0);
-
-    printf("El DNI del menor es: %i", dni_menor);
-}
-
-*/
-
-#include <stdio.h>
-#include <stdbool.h> // Incluyo stdbool para hacer una flag y no repetir tanto código
-
-void main()
-{
-    int dia, mes, año, dni, dia_menor, mes_menor, año_menor, dni_menor;
+    unsigned short int dia, mes, dia_menor, mes_menor;
+    short int año, año_menor;
+    unsigned int dni, dni_menor;
     bool es_menor;
 
     printf("Ingrese fechas de nacimiento y DNI para mostrar DNI del menor\n\n");
@@ -101,17 +23,17 @@ void main()
 
     printf("Ingrese fecha de nacimiento \n");
     printf("Día (0 para terminar): ");
-    scanf("%d", &dia);
+    scanf("%hu", &dia);
 
     if (dia != 0)
     {
         printf("Mes: ");
-        scanf("%d", &mes);
+        scanf("%hu", &mes);
         printf("Año: ");
-        scanf("%d", &año);
+        scanf("%hi", &año);
 
         printf("Ingrese DNI: ");
-        scanf("%i", &dni);
+        scanf("%u", &dni);
 
         dia_menor = dia;
         mes_menor = mes;
@@ -119,9 +41,10 @@ void main()
         dni_menor = dni;
 
         printf("\n");
-    }
+    } else 
+        dni_menor = 0;
 
-    /* ------------------------------------ */
+    /* Ingreso los datos de los ingresantes y calculo el menor del grupo */
 
     while (dia != 0)
     {
@@ -130,28 +53,21 @@ void main()
         printf("Ingrese fecha de nacimiento \n");
 
         printf("Día: ");
-        scanf("%i", &dia);
+        scanf("%hu", &dia);
 
         if (dia != 0)
         {
             printf("Mes: ");
-            scanf("%i", &mes);
+            scanf("%hu", &mes);
             printf("Año: ");
-            scanf("%i", &año);
+            scanf("%hi", &año);
 
             printf("Ingrese DNI: ");
-            scanf("%i", &dni);
+            scanf("%u", &dni);
 
-            if (año > año_menor)
-                es_menor = true;
-
-            else if (año == año_menor)
-                if (mes > mes_menor)
-                    es_menor = true;
-
-                else if (mes == mes_menor)
-                    if (dia > dia_menor)
-                        es_menor = true;
+            es_menor =  (año > año_menor) || 
+                        (año == año_menor && mes > mes_menor) || 
+                        (año == año_menor && mes == mes_menor && dia > dia_menor);
 
             if (es_menor)
             {
@@ -165,5 +81,7 @@ void main()
         }
     }
 
-    printf("El DNI del menor es: %d", dni_menor);
+    printf("El DNI del menor es: %u", dni_menor);
+
+    return 0;
 }

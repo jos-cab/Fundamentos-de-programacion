@@ -6,7 +6,7 @@ b) es mayor, menor o igual a cero.
 
 #include <stdio.h>
 
-void main()
+int main()
 {
     int numero;
 
@@ -28,4 +28,6 @@ void main()
         printf("El número es negativo");
     else
         printf("El número es cero");
+    
+    return 0;
 }

@@ -10,12 +10,13 @@ Ejemplo: altura=5 debe dibujar por pantalla:
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int altura, i, j;
+    unsigned short int altura;
+    int i, j;
 
     printf("Ingrese una altura para dibujar un triángulo: ");
-    scanf("%i", &altura);
+    scanf("%hu", &altura);
 
     for (i = 1; i <= altura; i++)
     {
@@ -24,4 +25,6 @@ void main()
         
         printf("\n");
     }
+
+    return 0;
 }

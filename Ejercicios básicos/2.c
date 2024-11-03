@@ -6,17 +6,20 @@ Mostrarle el resultado al usuario con un mensaje adecuado.
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int valor_hora, cantidad_horas, sueldo;
+    unsigned int valor_hora, cantidad_horas;
+    unsigned long int sueldo;
 
     printf("Ingrese el valor de cada hora: ");
-    scanf("%i", &valor_hora);
+    scanf("%u", &valor_hora);
 
     printf("Ingrese la cantidad de horas: ");
-    scanf("%i", &cantidad_horas);
+    scanf("%u", &cantidad_horas);
 
     sueldo = cantidad_horas * valor_hora;
 
-    printf("El sueldo es: %i", sueldo);
+    printf("El sueldo es: %lu", sueldo);
+
+    return 0;
 }

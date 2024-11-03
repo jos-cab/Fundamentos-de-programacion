@@ -4,9 +4,11 @@
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int a, n, potencia_nesima, i, j;
+    int a, n, i, j;
+    unsigned long int potencia_nesima;
+
     potencia_nesima = 1;
 
     printf("Ingrese a y n para calcular potencia enésima de a por productos sucesivos \n");
@@ -19,5 +21,7 @@ void main()
     for (i = 0; i < n; i++)
         potencia_nesima *= a;
     
-    printf("La potencia n-esima es: %i ", potencia_nesima);
+    printf("La potencia n-esima es: %lu ", potencia_nesima);
+
+    return 0;
 }

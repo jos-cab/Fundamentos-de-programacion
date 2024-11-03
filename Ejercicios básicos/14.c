@@ -8,7 +8,7 @@ desde la tabla del 1 hasta la tabla del 9 para los primeros 100 números natural
 #define N 9
 #define M 100
 
-void main()
+int main()
 {
     int i, j;
 
@@ -19,4 +19,6 @@ void main()
         
         printf("\n\n");
     }
+
+    return 0;
 }

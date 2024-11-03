@@ -13,16 +13,18 @@ Se debe validar que no se ingresen montos negativos indicando al usuario monto i
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int monto, total;
+    unsigned long int total;
+    int monto;
+
     total = 0;
 
     do
     {
         do
         {
-            printf("Ingrese monto del producto: ");
+            printf("Ingrese monto del producto (0 para salir): ");
             scanf("%i", &monto);
 
             if (monto < 0)
@@ -37,5 +39,7 @@ void main()
     if (total > 1000)
         total *= 0.9; // 10% de descuento
 
-    printf("El total a pagar es: %i", total);
+    printf("El total a pagar es: %lu", total);
+
+    return 0;
 }

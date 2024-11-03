@@ -9,13 +9,16 @@ Recordar que por definición factorial(0)=1 y factorial(1)=1
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int numero, factorial, i;
+    int i;
+    short int numero;
+    unsigned long long int factorial;
+    
     factorial = 1;
 
     printf("Ingrese número entero positivo para calcular su factorial: ");
-    scanf("%i", &numero);
+    scanf("%hi", &numero);
 
     if (numero < 0)
         printf("no se puede calcular el factorial del número ingresado");
@@ -24,6 +27,8 @@ void main()
         for (i = 1; i <= numero; i++)
             factorial *= i;
 
-        printf("%i! = %i", numero, factorial);
+        printf("%hi! = %llu", numero, factorial);
     }
+
+    return 0;
 }
