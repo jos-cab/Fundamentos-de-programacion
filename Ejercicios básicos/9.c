@@ -9,7 +9,7 @@ La relación entre temperaturas Celsius y Fahrenheit está dada por la fórmula:
 
 #include <stdio.h>
 
-void main()
+int main()
 {
     float temperatura, conversion;
     char unidad;
@@ -19,16 +19,22 @@ void main()
     printf("Ingrese temperatura: ");
     scanf("%f", &temperatura);
 
-    if (unidad == 'C')
+    switch (unidad)
     {
-        conversion = (9.0 / 5.0) * temperatura + 32;
-        printf("La temperatura es igual a %.2f°F", conversion);
-    } else if (unidad == 'F')
-    {
-        conversion = 5.0 / 9.0 * (temperatura - 32);
-        printf("La temperatura es igual a %.2f°C", conversion);
-    } else
-    {
-        printf("Unidad inválida");
+        case 'C':
+            conversion = (9.0 / 5.0) * temperatura + 32;
+            printf("La temperatura es igual a %.2f°F", conversion);
+            break;
+            
+        case 'F':
+            conversion = 5.0 / 9.0 * (temperatura - 32);
+            printf("La temperatura es igual a %.2f°C", conversion);
+            break;
+        
+        default:
+            printf("Unidad inválida");
+            break;
     }
+
+    return 0;
 }
