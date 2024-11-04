@@ -20,52 +20,32 @@ Modificá la función escrita en el punto anterior, para que tenga en cuenta las
 
 bool es_primo(int n)
 {
-    int i = 2; // Comienzo evaluando si n es primo desde 2
+    int i;
     bool n_es_primo = true;
 
     if (n <= 1)
         n_es_primo = false;
     else
-        while (i < (n / 2) && n_es_primo)
-            if (n % i == 0)
-                n_es_primo = false;
-            else
-                i++;
+        n_es_primo = true;
+        
+    i = 2;
+    while (i < (n / 2) && n_es_primo)
+        if (n % i == 0)
+            n_es_primo = false;
+        else
+            i++;
 
     return n_es_primo;
 }
 
 int main()
 {
-    if (es_primo(1))
-        printf("1 es primo\n");
-    else
-        printf("1 no es primo\n");
-
-    if (es_primo(2))
-        printf("2 es primo\n");
-    else
-        printf("2 no es primo\n");
-
-    if (es_primo(13))
-        printf("13 es primo\n");
-    else
-        printf("13 no es primo\n");
-
-    if (es_primo(47))
-        printf("47 es primo\n");
-    else
-        printf("47 no es primo\n");
-
-    if (es_primo(100))
-        printf("100 es primo\n");
-    else
-        printf("100 no es primo\n");
-
-    if (es_primo(-1))
-        printf("-1 es primo\n");
-    else
-        printf("-1 no es primo\n");
+    if (es_primo(1)) printf("1 es primo\n"); else printf("1 no es primo\n");
+    if (es_primo(2)) printf("2 es primo\n"); else printf("2 no es primo\n");
+    if (es_primo(13)) printf("13 es primo\n"); else printf("13 no es primo\n");
+    if (es_primo(47)) printf("47 es primo\n"); else printf("47 no es primo\n");
+    if (es_primo(100)) printf("100 es primo\n"); else printf("100 no es primo\n");
+    if (es_primo(-1)) printf("-1 es primo\n"); else printf("-1 no es primo\n");
 
     return 0;
 }

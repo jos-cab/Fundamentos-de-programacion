@@ -7,9 +7,9 @@ en cuyo caso también debe ser divisible por 400.
 
 #include <stdio.h>
 
-unsigned short calcular_cantidad_dias_mes(unsigned short mes, short año)
+unsigned short int calcular_cantidad_dias_mes(unsigned short int mes, short int año)
 {
-    unsigned short cantidad_dias;
+    unsigned short int cantidad_dias;
 
     switch (mes)
     {
@@ -50,10 +50,11 @@ unsigned short calcular_cantidad_dias_mes(unsigned short mes, short año)
 
 int main()
 {
-    printf("La cantidad de días del mes 1: %hu\n", calcular_cantidad_dias_mes(-1, 2024));
-    printf("La cantidad de días del mes 2: %hu\n", calcular_cantidad_dias_mes(2, 2023));
-    printf("La cantidad de días del mes 4: %hu\n", calcular_cantidad_dias_mes(4, 2024));
-    printf("La cantidad de días del mes 13: %hu\n", calcular_cantidad_dias_mes(13, 2024));
+    printf("La cantidad de días del mes 1 de 2024: %hu\n", calcular_cantidad_dias_mes(1, 2024));
+    printf("La cantidad de días del mes 2 de 2024: %hu\n", calcular_cantidad_dias_mes(2, 2024));
+    printf("La cantidad de días del mes 2 de 2023: %hu\n", calcular_cantidad_dias_mes(2, 2023));
+    printf("La cantidad de días del mes 4 de 2024: %hu\n", calcular_cantidad_dias_mes(4, 2024));
+    printf("La cantidad de días del mes '13' de 2024: %hu\n", calcular_cantidad_dias_mes(13, 2024));
     
     return 0;
 }

@@ -16,12 +16,15 @@ Fuente de consulta: https://es.wikipedia.org/wiki/Producto_de_Wallis
 
 #include <stdio.h>
 
-double producto_wallis(int n)
+double producto_wallis(unsigned long long int n)
 {
-    double producto = 1.0;
+    double producto;
+    unsigned long long int i; // unsigned long long int necesario para ir hasta n
 
-    for (int i = 1; i <= n; i++)
-        producto *= (double)((2.0 * i) / (2.0 * i - 1)) * ((2.0 * i) / (2.0 * i + 1));
+    producto = 1;
+
+    for (i = 1; i <= n; i++)
+        producto *= (double)(2 * i) / (2 * i - 1) * (2 * i) / (2 * i + 1);
 
     return producto;
 }
@@ -31,5 +34,8 @@ int main()
     printf("El producto wallis con n = 100: %lf\n", producto_wallis(100));
     printf("El producto wallis con n = 1000: %lf\n", producto_wallis(1000));
     printf("El producto wallis con n = 10000: %lf\n", producto_wallis(10000));
+    printf("El producto wallis con n = 100000: %lf\n", producto_wallis(100000));
+    printf("El producto wallis con n = 1000000: %lf\n", producto_wallis(1000000));
+    
     return 0;
 }
