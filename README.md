@@ -7,6 +7,11 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 - [x] Agregar 0 en los nombres de los ejercicios para que aparezcan en orden.
 - [ ] Subprogramas: 14-31.
 - [ ] Consistencia (Nombres de viariables, funciones, tipos de datos, etc.).
+	- [x] Ejercicios básicos
+    - [x] Funciones
+    - [ ] Modularización
+    - [ ] Subprogramas
+    - [ ] Vectores
 
 ---
 
