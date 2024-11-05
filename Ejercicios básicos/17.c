@@ -1,5 +1,7 @@
 /*
-17) Generar un dibujo por pantalla con el siguiente patrón solicitando al usuario la altura.
+17) Generar un dibujo por pantalla con el siguiente patrón solicitando al 
+usuario la altura.
+
 Ejemplo: altura=5 debe dibujar por pantalla:
 *
 **

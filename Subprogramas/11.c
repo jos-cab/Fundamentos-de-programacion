@@ -1,6 +1,6 @@
 /*
-11) Generar los primeros n números naturales e informar un listado de cada número generado
-junto con el factorial correspondiente.
+11) Generar los primeros n números naturales e informar un listado de cada
+número generado junto con el factorial correspondiente.
 
 Utilizar una función que dado un número devuelva su factorial.
 */

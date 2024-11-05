@@ -28,7 +28,7 @@ void ingresar_datos(t_vec vector, int *ML)
 
     if (i == MF && vector[i - 1] != 0)
     {
-        printf("Se alcanzó la máxima cantidad de números permitidos para el ingreso\n");
+        printf("Se alcanzó el máximo de números permitidos.\n");
         *ML = i;
     }
     else

@@ -42,8 +42,11 @@ unsigned short int obtener_cantidad_digitos_numericos(string cadena){
 
 int main()
 {
-    printf("La cantidad de digitos numéricos de 'núm3r05' es: %hu\n", obtener_cantidad_digitos_numericos("núm3r05"));
-    printf("La cantidad de digitos numéricos de '1234567890' es: %hu\n", obtener_cantidad_digitos_numericos("1234567890"));
+    printf("La cantidad de digitos numéricos de 'núm3r05' es: %hu\n", 
+        obtener_cantidad_digitos_numericos("núm3r05"));
+
+    printf("La cantidad de digitos numéricos de '1234567890' es: %hu\n",
+        obtener_cantidad_digitos_numericos("1234567890"));
     
     return 0;
 }

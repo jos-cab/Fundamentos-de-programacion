@@ -32,7 +32,11 @@ validar("027845320011") devuelve true
 
 typedef char t_cadena[MAX];
 
-void obtener_cantidad_digitos_pares_e_impares(t_cadena cadena, unsigned short int cantidad_caracteres_cadena, unsigned short int *cantidad_digitos_pares, unsigned short int *cantidad_digitos_impares, bool *clave_es_valida)
+void obtener_cantidad_digitos_pares_e_impares(t_cadena cadena, 
+                                unsigned short int cantidad_caracteres_cadena, 
+                                unsigned short int *cantidad_digitos_pares, 
+                                unsigned short int *cantidad_digitos_impares, 
+                                bool *clave_es_valida)
 {
     int i;
 
@@ -73,18 +77,26 @@ void obtener_cantidad_digitos_pares_e_impares(t_cadena cadena, unsigned short in
 bool validar(t_cadena clave)
 {
     bool clave_es_valida;
-    unsigned short int cantidad_caracteres_clave, cantidad_digitos_pares, cantidad_digitos_impares;
+    unsigned short int cantidad_caracteres_clave;
+    unsigned short int cantidad_digitos_pares;
+    unsigned short int cantidad_digitos_impares;
 
     clave_es_valida = true;
     cantidad_caracteres_clave = strlen(clave);
 
-    if ((cantidad_caracteres_clave < 6) || (cantidad_caracteres_clave > 12))
+    if ((cantidad_caracteres_clave < 6) ||
+        (cantidad_caracteres_clave > 12))
         clave_es_valida = false;
     else
     {
-        obtener_cantidad_digitos_pares_e_impares(clave, cantidad_caracteres_clave, &cantidad_digitos_pares, &cantidad_digitos_impares, &clave_es_valida);
+        obtener_cantidad_digitos_pares_e_impares(clave,
+                                                 cantidad_caracteres_clave, 
+                                                 &cantidad_digitos_pares, 
+                                                 &cantidad_digitos_impares, 
+                                                 &clave_es_valida);
 
-        if (clave_es_valida && (cantidad_digitos_impares >= cantidad_digitos_pares))
+        if (clave_es_valida && 
+            (cantidad_digitos_impares >= cantidad_digitos_pares))
             clave_es_valida = false;
     }
 
@@ -94,15 +106,29 @@ bool validar(t_cadena clave)
 
 int main()
 {
-    if (validar("j20893")) printf("La clave 'j20893' es válida\n"); else printf("La clave 'j20893' no es válida\n");
-    if (validar("20893a")) printf("La clave '20893a' es válida\n"); else printf("La clave '20893a' no es válida\n");
-    if (validar("208X930")) printf("La clave '208X930' es válida\n"); else printf("La clave '208X930' no es válida\n");
-    if (validar("20201")) printf("La clave '20201' es válida\n"); else printf("La clave '20201' no es válida\n");
-    if (validar("23445776")) printf("La clave '23445776' es válida\n"); else printf("La clave '23445776' no es válida\n");
-    if (validar("089010")) printf("La clave '089010' es válida\n"); else printf("La clave '089010' no es válida\n");
-    if (validar("02784532132567")) printf("La clave '02784532132567' es válida\n"); else printf("La clave '02784532132567' no es válida\n");
-    if (validar("027845320011")) printf("La clave '027845320011' es válida\n"); else printf("La clave '027845320011' no es válida\n");
+    if (validar("j20893")) printf("La clave 'j20893' es válida\n"); 
+    else printf("La clave 'j20893' no es válida\n");
+    
+    if (validar("20893a")) printf("La clave '20893a' es válida\n"); 
+    else printf("La clave '20893a' no es válida\n");
 
+    if (validar("208X930")) printf("La clave '208X930' es válida\n");
+    else printf("La clave '208X930' no es válida\n");
+
+    if (validar("20201")) printf("La clave '20201' es válida\n");
+    else printf("La clave '20201' no es válida\n");
+
+    if (validar("23445776")) printf("La clave '23445776' es válida\n");
+    else printf("La clave '23445776' no es válida\n");
+
+    if (validar("089010")) printf("La clave '089010' es válida\n");
+    else printf("La clave '089010' no es válida\n");
+
+    if (validar("02784532132567")) printf("La clave '02784532132567' es válida\n");
+    else printf("La clave '02784532132567' no es válida\n");
+
+    if (validar("027845320011")) printf("La clave '027845320011' es válida\n");
+    else printf("La clave '027845320011' no es válida\n");
 
     return 0;
 }

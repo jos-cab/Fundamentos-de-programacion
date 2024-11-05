@@ -6,7 +6,8 @@ pero se sabe que no superan los 100.
 
 No se conocen cotas para los datos.
 
-Informar el valor máximo, la cantidad de veces que aparece y la/s posición/es que ocupa.
+Informar el valor máximo, la cantidad de veces que aparece y la/s posición/es
+que ocupa.
 */
 
 #include <stdio.h>
@@ -20,7 +21,7 @@ void ingresar_datos(t_vec vector, int *ML)
     float numero;
     *ML = 0;
 
-    printf("Ingrese números para saber el mayor, la cantidad de veces que aparece\n");
+    printf("Ingrese números para encontrar el mayor y su frecuencia\n");
     printf("y la/s posición/es que ocupa.\n");
     printf("\n");
 
@@ -64,7 +65,8 @@ void mostrar_posiciones_mayor(t_vec vector, int ML, float mayor)
 {
     int i;
 
-    printf("Las posiciones donde aparece el mayor número (%.2f) es/son: ", mayor);
+    printf("Las posiciones donde aparece el mayor número (%.2f) es/son: ", 
+        mayor);
 
     for (i = 0; i < ML; i++)
         if (vector[i] == mayor)
@@ -81,8 +83,10 @@ int main()
     if (vector[0] != 0)
     {
         mayor = calcular_mayor(vector, ML);
-        printf("La cantidad de veces que aparece el mayor número (%.2f) es: %hu\n",
-               mayor, calcular_cantidad_mayor(vector, ML, mayor));
+
+        printf("El mayor (%.2f) aparece %hu veces.\n",
+            mayor, calcular_cantidad_mayor(vector, ML, mayor));
+               
         mostrar_posiciones_mayor(vector, ML, mayor);
     }
 

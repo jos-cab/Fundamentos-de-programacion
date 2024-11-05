@@ -11,14 +11,16 @@ Recorrer la cadena a lo sumo una vez.
 
 Declare un tipo t_cadena acorde.
 
-Escribir el programa que incluya a la función y las invocaciones con los siguientes casos y
-las impresiones para comprobar que devuelven lo correcto.
+Escribir el programa que incluya a la función y las invocaciones con los 
+siguientes casos y las impresiones para comprobar que devuelven lo correcto.
 
 Casos:
-invertir_cadena("Hola, me llamo Ana.", cad_invertida) ==> cad_invertida: ".anAomallem,aloH"
+invertir_cadena("Hola, me llamo Ana.", cad_invertida) ==> 
+cad_invertida: ".anAomallem,aloH"
 invertir_cadena("234561", cad_invertida) ==> cad_invertida: "165432"
 invertir_cadena(" ", cad_invertida) ==> cad_invertida: ""
-invertir_cadena("Somos o No somos", cad_invertida) ==> cad_invertida: "somosoNosomoS"
+invertir_cadena("Somos o No somos", cad_invertida) ==> 
+cad_invertida: "somosoNosomoS"
 */
 
 #include <stdio.h>
@@ -38,7 +40,7 @@ void invertir_cadena(t_cadena cadena_original, t_cadena cadena_invertida)
 
     for (i = cantidad_caracteres_original - 1; i >= 0; i--)
     {
-        
+
         if (cadena_original[i] != ' ')
         {
             cadena_invertida[j] = cadena_original[i];

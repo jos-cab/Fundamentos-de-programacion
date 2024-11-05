@@ -16,7 +16,14 @@ f) de ninguno de los productos
 
 int main()
 {
-    unsigned short int cantidad_consumidores, cantidad_consumidores_x, cantidad_consumidores_y, cantidad_consumidores_solo_y, cantidad_consumidores_solo_x, cantidad_consumidores_ambos, cantidad_consumidores_ninguno;
+    unsigned short int cantidad_consumidores;
+    unsigned short int cantidad_consumidores_x;
+    unsigned short int cantidad_consumidores_y;
+    unsigned short int cantidad_consumidores_solo_y;
+    unsigned short int cantidad_consumidores_solo_x;
+    unsigned short int cantidad_consumidores_ambos;
+    unsigned short int cantidad_consumidores_ninguno;
+    
     char desea_continuar, consume_x, consume_y;
 
     cantidad_consumidores = 0;
@@ -52,7 +59,8 @@ int main()
         if (consume_y == 's')
             cantidad_consumidores_y++;
 
-        // Incremento cantidad de consumidores solo de x, solo de y, ambos o ninguno
+        // Incremento cantidad de consumidores solo de x, solo de y, ambos o 
+        // ninguno
         if (consume_x == 's' && consume_y == 's')
             cantidad_consumidores_ambos++;
         else if (consume_x == 's' && consume_y == 'n')
@@ -66,17 +74,35 @@ int main()
         do
         {
             printf("Desea continuar? (s/n): ");
-            scanf(" %c", &desea_continuar); // El espacio antes de %c es necesario
+            // El espacio antes de %c es necesario
+            scanf(" %c", &desea_continuar);
         } while (desea_continuar != 's' && desea_continuar != 'n');
 
     } while (desea_continuar == 's');
 
-    printf("El porcentaje de consumidores de x es: %.2f%% \n", ((float) cantidad_consumidores_x / cantidad_consumidores) * 100); // a)
-    printf("El porcentaje de consumidores de y es: %.2f%% \n", ((float) cantidad_consumidores_y / cantidad_consumidores) * 100); // b)
-    printf("El porcentaje de consumidores solamente de x es: %.2f%% \n", ((float) cantidad_consumidores_solo_x / cantidad_consumidores) * 100); // c)
-    printf("El porcentaje de consumidores solamente de y es: %.2f%% \n", ((float) cantidad_consumidores_solo_y / cantidad_consumidores) * 100); // d)
-    printf("El porcentaje de consumidores de ambos productos es: %.2f%% \n", ((float) cantidad_consumidores_ambos / cantidad_consumidores) * 100); // e)
-    printf("El porcentaje de consumidores de ningún producto es: %.2f%% \n", ((float) cantidad_consumidores_ninguno / cantidad_consumidores) * 100); // f)
+    // a)
+    printf("El porcentaje de consumidores de x es: %.2f%% \n", 
+        ((float) cantidad_consumidores_x / cantidad_consumidores) * 100); 
+
+    // b)
+    printf("El porcentaje de consumidores de y es: %.2f%% \n",
+        ((float) cantidad_consumidores_y / cantidad_consumidores) * 100); 
+
+    // c)
+    printf("El porcentaje de consumidores solamente de x es: %.2f%% \n",
+        ((float) cantidad_consumidores_solo_x / cantidad_consumidores) * 100); 
+
+    // d)
+    printf("El porcentaje de consumidores solamente de y es: %.2f%% \n", 
+        ((float) cantidad_consumidores_solo_y / cantidad_consumidores) * 100); 
+
+    // e)
+    printf("El porcentaje de consumidores de ambos productos es: %.2f%% \n", 
+        ((float) cantidad_consumidores_ambos / cantidad_consumidores) * 100); 
+
+    // f)
+    printf("El porcentaje de consumidores de ningún producto es: %.2f%% \n",
+        ((float) cantidad_consumidores_ninguno / cantidad_consumidores) * 100); 
 
     return 0;
 }

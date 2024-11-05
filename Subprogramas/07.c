@@ -1,10 +1,11 @@
 /*
 7) Escribir una función que dado un código numérico de m dígitos,
-separe un sub-código consistente en una cantidad n<m de dígitos a partir del k-ésimo lugar
-a contar del dígito menos significativo.
+separe un sub-código consistente en una cantidad n<m de dígitos a partir del
+k-ésimo lugar a contar del dígito menos significativo.
 
-Utilizarla en un programa que ingrese un listado de códigos numéricos junto con sus
-correspondientes parámetros m,n y k y liste dichos códigos de entrada junto con el sub-código deseado.
+Utilizarla en un programa que ingrese un listado de códigos numéricos junto con
+sus correspondientes parámetros m,n y k y liste dichos códigos de entrada junto
+con el sub-código deseado.
 */
 
 #include <stdio.h>
@@ -67,7 +68,10 @@ int separar_numero(int m, int n, int k)
 
 int main()
 {
-    printf("m = 123456789, n = 3, k = 2: %d\n", separar_numero(123456789, 3, 2));
-    printf("m = 123456789, n = 2, k = 5: %d\n", separar_numero(123456789, 2, 5));
+    printf("m = 123456789, n = 3, k = 2: %d\n",
+        separar_numero(123456789, 3, 2));
+        
+    printf("m = 123456789, n = 2, k = 5: %d\n",
+        separar_numero(123456789, 2, 5));
     return 0;
 }

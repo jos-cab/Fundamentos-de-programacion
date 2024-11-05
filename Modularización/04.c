@@ -11,7 +11,7 @@ y además que el primer número sea menor o igual que el segundo.
 
 void ingresar_numeros(int *numero_1, int *numero_2)
 {
-    printf("Ingrese dos números para imprimir los números primos entre ellos\n");
+    printf("Ingresa dos números para mostrar los primos entre ellos: \n");
 
     do
     {

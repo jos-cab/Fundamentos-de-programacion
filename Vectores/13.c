@@ -6,16 +6,17 @@ nota ( 0 a 10 ).
 
 a) El mismo número de alumno y de materia puede aparecer más de una vez.
 b) El listado no está ordenado, ni necesariamente completo.
-Esto último quiere decir que puede ser que un alumno no haya cursado una o más materias,
-y por lo tanto no existan los datos correspondientes en el listado.
+Esto último quiere decir que puede ser que un alumno no haya cursado una o más
+materias, y por lo tanto no existan los datos correspondientes en el listado.
 
 Se pide:
-.(1) Crear una estructura bidimensional que almacene el promedio por materia de cada alumno
-e informarla asignándole en la impresión un guión al caso de falta de datos mencionado.
+.(1) Crear una estructura bidimensional que almacene el promedio por materia de
+cada alumno e informarla asignándole en la impresión un guión al caso de falta
+de datos mencionado.
 .(2) Informar el porcentaje de alumnos que cursó cada materia y
 el promedio general por materia considerando los alumnos que la cursaron.
-.(3) Informar la cantidad de materias que cursó cada alumno y el promedio que obtuvo
-considerando las materias que cursó.
+.(3) Informar la cantidad de materias que cursó cada alumno y el promedio que
+obtuvo considerando las materias que cursó.
 */
 
 #include <stdio.h>
@@ -72,7 +73,8 @@ void mostrar_matriz(t_matriz_promedios promedios)
     }
 }
 
-void calcular_procentajes_cursada_materias(t_matriz_promedios promedios, t_promedios procentajes_cursada_materias)
+void calcular_procentajes_cursada_materias(t_matriz_promedios promedios,
+                                    t_promedios procentajes_cursada_materias)
 {
     int i, j;
     float porcentaje;
@@ -122,7 +124,9 @@ void mostrar_promedios_alumnos(t_promedios promedios)
             printf("%5.3g", promedios[i]);
 }
 
-void calcular_promedios_generales_materias(t_matriz_promedios promedios, t_promedios porcentajes, t_promedios promedios_generales_materias)
+void calcular_promedios_generales_materias(t_matriz_promedios promedios, 
+                                    t_promedios porcentajes, 
+                                    t_promedios promedios_generales_materias)
 {
     int i, j;
     int cantidad_cursados;
@@ -146,7 +150,8 @@ void calcular_promedios_generales_materias(t_matriz_promedios promedios, t_prome
     }
 }
 
-void calcular_cantidad_materias_cursadas_alumnos(t_matriz_promedios promedios, t_materias_cursadas cantidad_materias_cursadas_alumnos)
+void calcular_cantidad_materias_cursadas_alumnos(t_matriz_promedios promedios,
+                        t_materias_cursadas cantidad_materias_cursadas_alumnos)
 {
     int i, j;
 
@@ -162,7 +167,9 @@ void calcular_cantidad_materias_cursadas_alumnos(t_matriz_promedios promedios, t
     }
 }
 
-void calcular_promedios_alumnos(t_matriz_promedios promedios, t_materias_cursadas cantidad_materias_cursadas_alumnos, t_promedios promedios_alumnos)
+void calcular_promedios_alumnos(t_matriz_promedios promedios,
+                        t_materias_cursadas cantidad_materias_cursadas_alumnos,
+                        t_promedios promedios_alumnos)
 {
     int i, j;
     float promedio;
@@ -184,7 +191,8 @@ void calcular_promedios_alumnos(t_matriz_promedios promedios, t_materias_cursada
     }
 }
 
-void mostrar_cantidad_materias_cursadas_alumno(t_materias_cursadas cantidad_materias_cursadas_alumnos)
+void mostrar_cantidad_materias_cursadas_alumno(
+                        t_materias_cursadas cantidad_materias_cursadas_alumnos)
 {
     int i;
 
@@ -198,10 +206,11 @@ void mostrar_cantidad_materias_cursadas_alumno(t_materias_cursadas cantidad_mate
 int main()
 {
     t_matriz_notas notas = {
-        {{8, 9, 5}, {3, 6, 7}, {NO_CURSADA}, {NO_CURSADA}},       // alumno_1: materia -> vector_notas
-        {{2, 5, 4}, {3, 7, 2}, {9, 8, 4}, {NO_CURSADA}},          // alumno_2: materia -> vector_notas
-        {{10, 3, 5}, {NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}},   // alumno_3: materia -> vector_notas
-        {{NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}}, // alumno_4: materia -> vector_notas
+        // alumno_n: materia -> vector_notas
+        {{8, 9, 5}, {3, 6, 7}, {NO_CURSADA}, {NO_CURSADA}},       
+        {{2, 5, 4}, {3, 7, 2}, {9, 8, 4}, {NO_CURSADA}},
+        {{10, 3, 5}, {NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}},
+        {{NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}, {NO_CURSADA}},
     };
     t_matriz_promedios promedios;
     t_promedios procentajes_cursada_materias;
@@ -210,31 +219,43 @@ int main()
     t_promedios promedios_alumnos;
 
     calcular_promedios(notas, promedios);
+    
     printf("Filas: alumnos, columnas: materias\n");
     printf("Promedios:\n");
     mostrar_matriz(promedios);
 
     printf("\n");
 
-    calcular_procentajes_cursada_materias(promedios, procentajes_cursada_materias);
+    calcular_procentajes_cursada_materias(promedios, 
+                                          procentajes_cursada_materias);
+
     printf("Porcentajes de alumnos que cursaron cada materia:\n");
     mostrar_porcentajes(procentajes_cursada_materias);
 
     printf("\n\n");
 
-    calcular_promedios_generales_materias(promedios, procentajes_cursada_materias, promedios_generales_materias);
+    calcular_promedios_generales_materias(promedios,
+                                          procentajes_cursada_materias,
+                                          promedios_generales_materias);
+
     printf("Promedios generales por materia:\n");
     mostrar_promedios_materias(promedios_generales_materias);
 
     printf("\n\n");
 
-    calcular_cantidad_materias_cursadas_alumnos(promedios, cantidad_materias_cursadas_alumnos);
+    calcular_cantidad_materias_cursadas_alumnos(promedios,
+                                            cantidad_materias_cursadas_alumnos);
+
     printf("Cantidad de materias cursadas por alumno:\n");
-    mostrar_cantidad_materias_cursadas_alumno(cantidad_materias_cursadas_alumnos);
+    mostrar_cantidad_materias_cursadas_alumno(
+                                            cantidad_materias_cursadas_alumnos);
 
     printf("\n\n");
 
-    calcular_promedios_alumnos(promedios, cantidad_materias_cursadas_alumnos, promedios_alumnos);
+    calcular_promedios_alumnos(promedios,
+                               cantidad_materias_cursadas_alumnos,
+                               promedios_alumnos);
+    
     printf("Promedio de materias cursadas por alumno:\n");
     mostrar_promedios_alumnos(promedios_alumnos);
 

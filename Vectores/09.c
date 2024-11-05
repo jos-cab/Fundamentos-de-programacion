@@ -1,6 +1,6 @@
 /*
-9) Dado un vector a de longitud n ordenado ascendente y un elemento p del mismo tipo
-que los elementos del vector,
+9) Dado un vector a de longitud n ordenado ascendente y un elemento p del mismo
+tipo que los elementos del vector,
 
 intercalar p en el vector a de modo que siga ordenado.
 */

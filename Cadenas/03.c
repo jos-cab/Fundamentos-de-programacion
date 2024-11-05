@@ -1,6 +1,6 @@
 /*
-3. Escribir una función en C, que reciba como parámetro una cadena de tipo t_cadena,
-y devuelva la cantidad de palabras que hay en la cadena.
+3. Escribir una función en C, que reciba como parámetro una cadena de tipo 
+t_cadena, y devuelva la cantidad de palabras que hay en la cadena.
 
 Considerar que una palabra está separada de otra, por uno ó más blancos.
 
@@ -8,8 +8,8 @@ No recorrer la cadena más de una vez.
 
 Declare un tipo t_cadena acorde.
 
-Escribir el programa que incluya a la función y las invocaciones con los siguientes caso de prueba:
-
+Escribir el programa que incluya a la función y las invocaciones con los
+siguientes caso de prueba:
 cant_palabras("El sol es amarillo.") devuevle 4
 cant_palabras(" Hoy es 30 de Junio de 2021 ") devuevle 7
 cant_palabras("30/06/2021") devuelve 1
@@ -49,11 +49,20 @@ unsigned short int cant_palabras(t_cadena cadena)
 
 int main()
 {
-    printf("Cantidad palabras: %hu\n", cant_palabras("El sol es amarillo."));
-    printf("Cantidad palabras: %hu\n", cant_palabras(" Hoy es 30 de Junio de 2021 "));
-    printf("Cantidad palabras: %hu\n", cant_palabras("30/06/2021"));
-    printf("Cantidad palabras: %hu\n", cant_palabras("El precio es  $2.000.- "));
-    printf("Cantidad palabras: %hu\n", cant_palabras(" "));
+    printf("Cantidad palabras: %hu\n", 
+        cant_palabras("El sol es amarillo."));
+
+    printf("Cantidad palabras: %hu\n",
+        cant_palabras(" Hoy es 30 de Junio de 2021 "));
+
+    printf("Cantidad palabras: %hu\n",
+        cant_palabras("30/06/2021"));
+
+    printf("Cantidad palabras: %hu\n",
+        cant_palabras("El precio es  $2.000.- "));
+
+    printf("Cantidad palabras: %hu\n",
+        cant_palabras(" "));
     
     return 0;
 }

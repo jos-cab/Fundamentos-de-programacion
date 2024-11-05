@@ -1,9 +1,9 @@
 /*
-1) Dado n entero positivo y un listado de n números reales, almacenar los números en un vector
-en el orden de entrada.
+1) Dado n entero positivo y un listado de n números reales, almacenar los
+números en un vector en el orden de entrada.
 
-Informar el contenido del vector indicando la posición ocupada por cada número a partir
-de la primera posición.
+Informar el contenido del vector indicando la posición ocupada por cada número a
+partir de la primera posición.
 */
 
 #include <stdio.h>

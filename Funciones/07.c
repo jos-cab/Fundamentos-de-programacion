@@ -1,5 +1,6 @@
 /*
-7. Ahora toma el ejercicio anterior, pero intenta resolverlo aplicando el método de Euclides.
+7. Ahora toma el ejercicio anterior, pero intenta resolverlo aplicando el
+método de Euclides.
 
 Para poder escribir el algoritmo, quizás te ayude ver el siguiente video:
 https://www.youtube.com/watch?v=x6qFMSRpgpM
@@ -42,5 +43,6 @@ int main()
     printf("MCD(10, 0): %d\n", mcd(10, 0));
     printf("MCD(100, 50): %d\n", mcd(100, 50));
     printf("MCD(0, 0): %d\n", mcd(0, 0));
+    
     return 0;
 }

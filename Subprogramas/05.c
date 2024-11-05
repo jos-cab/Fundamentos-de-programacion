@@ -1,6 +1,6 @@
 /*
-5) Escribir una función que dados a y b devuelva el cociente de la división entera,
-sin utilizar el operador correspondiente del lenguaje.
+5) Escribir una función que dados a y b devuelva el cociente de la división
+entera, sin utilizar el operador correspondiente del lenguaje.
 
 Validar los tipos de datos de entrada.
 */

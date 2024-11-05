@@ -5,7 +5,8 @@ categorías y viaja a 250 localidades de zonas turísticas del país.
 No necesariamente todas las temporadas se habilitan las 4 categorías, ni hay
 viajes a todas las localidades posibles.
 
-a) Se dispone de un registro de todos los pasajes vendidos en una temporada consistente en:
+a) Se dispone de un registro de todos los pasajes vendidos en una temporada
+consistente en:
 código de categoría (a, b, c, d),
 código de destino (1 a 250 )
 
@@ -26,7 +27,7 @@ Se pide informar:
 #define MFVENTAS 100
 
 typedef int TRegistro[MFCATEGORIA][MFDESTINO];
-typedef int TVentas[MFVENTAS][2]; //{{categoria, destino}, {categoria, destino}, ...}
+typedef int TVentas[MFVENTAS][2];
 typedef int TCantDestino[MFDESTINO];
 typedef int TCantCategoria[MFCATEGORIA];
 
@@ -41,12 +42,15 @@ void vaciar_registro(TRegistro registro)
 
 void llenar_registro(TRegistro registro, TVentas ventas, int mlventas)
 {
-    int i, categoria, destino; // categoria y destino son variables para hacer más legible el código
+    // categoria y destino son variables para hacer más legible el código
+    int i, categoria, destino; 
 
     for (i = 0; i < mlventas; i++)
     {
-        // Para rellenar la matriz le resto 1 a categoría y a destino, así uso la primera fila y columna.
-        // Esto me permite ingresar en las ventas [1, 1] y se ve reflejado en el registro como [0, 0]
+        // Para rellenar la matriz le resto 1 a categoría y a destino, así uso
+        // la primera fila y columna.
+        // Esto me permite ingresar en las ventas [1, 1] y se ve reflejado en el
+        // registro como [0, 0]
         categoria = ventas[i][0] - 1;
         destino = ventas[i][1] - 1;
 
@@ -70,7 +74,8 @@ void mostrar_registro(TRegistro registro)
     }
 }
 
-void mostrar_cantidad_destino_categoria(TCantDestino cantidad_pasajeros_destino, TCantCategoria cantidad_pasajeros_categoria)
+void mostrar_cantidad_destino_categoria(TCantDestino cantidad_pasajeros_destino,
+                                    TCantCategoria cantidad_pasajeros_categoria)
 {
     int i;
 
@@ -85,7 +90,8 @@ void mostrar_cantidad_destino_categoria(TCantDestino cantidad_pasajeros_destino,
         printf("%d ", cantidad_pasajeros_categoria[i]);
 }
 
-void obtener_cantidad_pasajeros_destino(TRegistro registro, TCantDestino cantidad_pasajeros_destino)
+void obtener_cantidad_pasajeros_destino(TRegistro registro,
+                                        TCantDestino cantidad_pasajeros_destino)
 {
     int i, j;
 
@@ -98,7 +104,8 @@ void obtener_cantidad_pasajeros_destino(TRegistro registro, TCantDestino cantida
     }
 }
 
-int obtener_cantidad_pasajeros_categoria(TRegistro registro, TCantCategoria cantidad_pasajeros_categoria)
+int obtener_cantidad_pasajeros_categoria(TRegistro registro,
+                                    TCantCategoria cantidad_pasajeros_categoria)
 {
     int i, j;
 
@@ -118,7 +125,9 @@ void mostrar_mayor_menor_cantidad_pasajeros_destino(int mayor, int menor)
     printf("Menor cantidad de pasajeros por destino: %d\n", menor);
 }
 
-void obtener_mayor_menor_cantidad_pasajeros_destino(TCantCategoria cantidad_pasajeros_destino, int *mayor_cantidad, int *menor_cantidad)
+void obtener_mayor_menor_cantidad_pasajeros_destino(
+                                    TCantCategoria cantidad_pasajeros_destino,
+                                    int *mayor_cantidad, int *menor_cantidad)
 {
     int i, indice_mayor, indice_menor;
 
@@ -147,7 +156,16 @@ void obtener_mayor_menor_cantidad_pasajeros_destino(TCantCategoria cantidad_pasa
 int main()
 {
     TRegistro registro;
-    TVentas ventas = {{1, 1}, {1, 1}, {2, 3}, {3, 2}, {2, 1}, {3, 1}, {2, 2}}; // categoria: 1 = a, 2 = b, 3 = c, 4 = d. destino: 1 - 250
+
+    // categoria: 1 = a, 2 = b, 3 = c, 4 = d. destino: 1 - 250
+    TVentas ventas = {{1, 1}, 
+                      {1, 1}, 
+                      {2, 3}, 
+                      {3, 2}, 
+                      {2, 1}, 
+                      {3, 1}, 
+                      {2, 2}};
+
     TCantDestino cantidad_pasajeros_destino;
     TCantCategoria cantidad_pasajeros_categoria;
 
@@ -158,14 +176,19 @@ int main()
     llenar_registro(registro, ventas, mlventas);
     mostrar_registro(registro);
 
-    obtener_cantidad_pasajeros_categoria(registro, cantidad_pasajeros_categoria);
+    obtener_cantidad_pasajeros_categoria(registro, 
+                                         cantidad_pasajeros_categoria);
     obtener_cantidad_pasajeros_destino(registro, cantidad_pasajeros_destino);
 
-    mostrar_cantidad_destino_categoria(cantidad_pasajeros_destino, cantidad_pasajeros_categoria);
+    mostrar_cantidad_destino_categoria(cantidad_pasajeros_destino, 
+                                       cantidad_pasajeros_categoria);
 
-    obtener_mayor_menor_cantidad_pasajeros_destino(cantidad_pasajeros_destino, &mayor_cantidad_destino, &menor_cantidad_destino);
+    obtener_mayor_menor_cantidad_pasajeros_destino(cantidad_pasajeros_destino,
+                                                   &mayor_cantidad_destino,
+                                                   &menor_cantidad_destino);
 
-    mostrar_mayor_menor_cantidad_pasajeros_destino(mayor_cantidad_destino, menor_cantidad_destino);
+    mostrar_mayor_menor_cantidad_pasajeros_destino(mayor_cantidad_destino,
+                                                   menor_cantidad_destino);
 
     return 0;
 }

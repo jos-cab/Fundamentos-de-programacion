@@ -39,40 +39,20 @@ bool es_perfecto(int n)
 
 int main()
 {
-    if (es_perfecto(1))
-        printf("1 es perfecto");
-    else
-        printf("1 no es perfecto");
+    if (es_perfecto(1)) printf("1 es perfecto\n");
+    else printf("1 no es perfecto\n");
 
-    printf("\n");
+    if (es_perfecto(2)) printf("2 es perfecto\n");
+    else printf("2 no es perfecto\n");
 
-    if (es_perfecto(2))
-        printf("2 es perfecto");
-    else
-        printf("2 no es perfecto");
+    if (es_perfecto(6)) printf("6 es perfecto\n");
+    else printf("6 no es perfecto\n");
 
-    printf("\n");
+    if (es_perfecto(28)) printf("28 es perfecto\n");
+    else printf("28 no es perfecto\n");
 
-    if (es_perfecto(6))
-        printf("6 es perfecto");
-    else
-        printf("6 no es perfecto");
-
-    printf("\n");
-
-    if (es_perfecto(28))
-        printf("28 es perfecto");
-    else
-        printf("28 no es perfecto");
-
-    printf("\n");
-
-    if (es_perfecto(100))
-        printf("100 es perfecto");
-    else
-        printf("100 no es perfecto");
-
-    printf("\n");
+    if (es_perfecto(100)) printf("100 es perfecto\n");
+    else printf("100 no es perfecto\n");
 
     return 0;
 }

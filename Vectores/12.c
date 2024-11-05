@@ -1,12 +1,13 @@
 /*
-12) Se tiene un registro de la temperatura por hora (0 a 23) por día (1 a n) de un mes,
-ordenada cronológicamente.
+12) Se tiene un registro de la temperatura por hora (0 a 23) por día (1 a n) de
+un mes, ordenada cronológicamente.
 
 Se pide:
 
 a) Ingresar el número de mes para conocer la cantidad de días registrados.
 b) Cargar el listado en una matriz e informarla en forma bidimensional.
-c) Informar además la máxima y la mínima temperatura por día, la máxima y la mínima temperatura del mes.
+c) Informar además la máxima y la mínima temperatura por día, la máxima y la
+mínima temperatura del mes.
 */
 
 #include <stdio.h>
@@ -184,13 +185,18 @@ int main()
 
         encontrar_minimos_dia(temperaturas, minimos, ML_F, ML_C);
         encontrar_maximos_dia(temperaturas, maximos, ML_F, ML_C);
+        
         printf("Las temperaturas mínimas por día: \n");
         mostrar_vector(minimos, ML_C);
+
         printf("Las temperaturas máximas por día: \n");
         mostrar_vector(maximos, ML_C);
 
-        printf("La temperatura mínima del mes: %.2f\n", encontrar_minimo_total(minimos, ML_C));
-        printf("La temperatura máxima del mes: %.2f\n", encontrar_maximo_total(maximos, ML_C));
+        printf("La temperatura mínima del mes: %.2f\n",
+            encontrar_minimo_total(minimos, ML_C));
+
+        printf("La temperatura máxima del mes: %.2f\n",
+            encontrar_maximo_total(maximos, ML_C));
     }
 
     return 0;

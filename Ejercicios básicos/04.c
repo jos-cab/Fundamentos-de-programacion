@@ -11,7 +11,7 @@ int main()
     unsigned int n;
     unsigned long resultado;
 
-    printf("Ingrese un número para mostrar suma de los primeros n numeros naturales: ");
+    printf("Ingrese un número para la suma de los primeros n naturales: ");
     scanf("%u", &n);
     
     resultado = (n * (n + 1)) / 2;

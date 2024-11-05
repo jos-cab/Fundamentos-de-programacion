@@ -1,5 +1,6 @@
 /*
-16) Dado un número entero positivo ingresado por el usuario, procesarlo e indicar:
+16) Dado un número entero positivo ingresado por el usuario, procesarlo e
+indicar:
 (realizar un programa diferente para cada caso)
 a) La cantidad de dígitos pares e impares que lo componen.
 b) El menor y el mayor dígito del número.
@@ -13,12 +14,17 @@ Ejemplo:
 
 int main()
 {
-    unsigned short int numero, cantidad_pares, cantidad_impares, menor, mayor, digito;
+    unsigned short int numero;
+    unsigned short int cantidad_pares;
+    unsigned short int cantidad_impares;
+    unsigned short int menor;
+    unsigned short int mayor;
+    unsigned short int digito;
 
     cantidad_pares = 0;
     cantidad_impares = 0;
-    // El menor se va a terminar actualizando ya que el mayor número de un dígito ingresado
-    // puede ser como mucho 9.
+    // El menor se va a terminar actualizando ya que el mayor número de un 
+    // dígito ingresado puede ser como mucho 9.
     // Lo contrario sucede con el mayor dígito.
     menor = 9;
     mayor = 0;

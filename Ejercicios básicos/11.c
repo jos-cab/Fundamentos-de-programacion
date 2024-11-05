@@ -1,12 +1,15 @@
 /*
-11) Dado un número n, informar los n primeros términos de la sucesión geométrica de razón 3 (1, 3, 9, 27, etc.).
+11) Dado un número n, informar los n primeros términos de la sucesión geométrica
+de razón 3 (1, 3, 9, 27, etc.).
 */
 
 #include <stdio.h>
 
 int main()
 {
-    int i; // Puede ser unsigned short int o size_t, pero para este curso a i siempre le asignaré tipo int
+    // Puede ser unsigned short int o size_t para la variable i,
+    // pero para este curso siempre le asignaré tipo int
+    int i; 
     unsigned int n;
     unsigned long int termino;
 

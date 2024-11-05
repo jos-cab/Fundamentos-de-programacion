@@ -19,7 +19,7 @@ void ingresar_datos(t_vec vector, int *ML)
     int numero;
     *ML = 0;
 
-    printf("Ingrese números para saber el mayor, la cantidad de veces que aparece\n");
+    printf("Ingrese números para ver el mayor y su frecuencia.\n");
     printf("y la/s posición/es que ocupa.\n");
     printf("\n");
 
@@ -80,8 +80,10 @@ int main()
     if (vector[0] != 0)
     {
         mayor = calcular_mayor(vector, ML);
-        printf("La cantidad de veces que aparece el mayor número (%d) es: %hu\n",
+
+        printf("El mayor (%d) aparece %hu veces.\n",
                mayor, calcular_cantidad_mayor(vector, ML, mayor));
+               
         mostrar_posiciones_mayor(vector, ML, mayor);
     }
 

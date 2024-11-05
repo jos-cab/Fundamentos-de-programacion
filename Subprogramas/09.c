@@ -11,8 +11,10 @@ son amigos.
 Se pide:
 a) escribir una función booleana que llamada desde un programa, permita
 discernir si dos números (parámetros) son amigos.
-b) Usar otra función para calcular la suma de los divisores de un número determinado.
-c) Hacer referencia a dichas funciones desde un programa o desde otro subprograma.
+b) Usar otra función para calcular la suma de los divisores de un número
+determinado.
+c) Hacer referencia a dichas funciones desde un programa o desde otro
+subprograma.
 */
 
 #include <stdio.h>

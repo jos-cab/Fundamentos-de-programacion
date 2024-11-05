@@ -1,8 +1,9 @@
 /*
-10) Escribir un programa que ingrese un listado de números e informe la cantidad de
-múltiplos de 2, 3, 5 y 7.
-Utilizar una función que dados 2 números devuelva una señal que indique si el primero
-es o no múltiplo del segundo.
+10) Escribir un programa que ingrese un listado de números e informe la cantidad
+de múltiplos de 2, 3, 5 y 7.
+
+Utilizar una función que dados 2 números devuelva una señal que indique si el
+primero es o no múltiplo del segundo.
 */
 
 #include <stdio.h>
@@ -22,7 +23,7 @@ int main()
 
     int numero;
 
-    printf("Ingrese números para calcular múltiplos de 2, 3, 5 y 7. 0 para salir.\n");
+    printf("Ingresa números para múltiplos de 2, 3, 5 y 7. 0 para salir.\n");
 
     do
     {

@@ -1,13 +1,15 @@
 /*
-1. Escribir una función que reciba un mes y un año; y devuelva la cantidad de días del mes,
-considerando los años bisiestos.
-Tenga en cuenta que un año bisiesto es aquel divisible por 4, salvo que sea divisible por 100,
-en cuyo caso también debe ser divisible por 400.
+1. Escribir una función que reciba un mes y un año; y devuelva la cantidad de
+días del mes, considerando los años bisiestos.
+
+Tenga en cuenta que un año bisiesto es aquel divisible por 4, salvo que sea
+divisible por 100, en cuyo caso también debe ser divisible por 400.
 */
 
 #include <stdio.h>
 
-unsigned short int calcular_cantidad_dias_mes(unsigned short int mes, short int año)
+unsigned short int calcular_cantidad_dias_mes(unsigned short int mes,
+                                              short int año)
 {
     unsigned short int cantidad_dias;
 
@@ -50,11 +52,20 @@ unsigned short int calcular_cantidad_dias_mes(unsigned short int mes, short int 
 
 int main()
 {
-    printf("La cantidad de días del mes 1 de 2024: %hu\n", calcular_cantidad_dias_mes(1, 2024));
-    printf("La cantidad de días del mes 2 de 2024: %hu\n", calcular_cantidad_dias_mes(2, 2024));
-    printf("La cantidad de días del mes 2 de 2023: %hu\n", calcular_cantidad_dias_mes(2, 2023));
-    printf("La cantidad de días del mes 4 de 2024: %hu\n", calcular_cantidad_dias_mes(4, 2024));
-    printf("La cantidad de días del mes '13' de 2024: %hu\n", calcular_cantidad_dias_mes(13, 2024));
+    printf("La cantidad de días del mes 1 de 2024: %hu\n", 
+        calcular_cantidad_dias_mes(1, 2024));
+
+    printf("La cantidad de días del mes 2 de 2024: %hu\n",
+        calcular_cantidad_dias_mes(2, 2024));
+
+    printf("La cantidad de días del mes 2 de 2023: %hu\n",
+        calcular_cantidad_dias_mes(2, 2023));
+
+    printf("La cantidad de días del mes 4 de 2024: %hu\n",
+        calcular_cantidad_dias_mes(4, 2024));
+
+    printf("La cantidad de días del mes '13' de 2024: %hu\n",
+        calcular_cantidad_dias_mes(13, 2024));
     
     return 0;
 }

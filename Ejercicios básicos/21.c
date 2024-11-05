@@ -65,9 +65,9 @@ int main()
             printf("Ingrese DNI: ");
             scanf("%u", &dni);
 
-            es_menor =  (año > año_menor) || 
-                        (año == año_menor && mes > mes_menor) || 
-                        (año == año_menor && mes == mes_menor && dia > dia_menor);
+            es_menor = (año > año_menor) || 
+                    (año == año_menor && mes > mes_menor) || 
+                    (año == año_menor && mes == mes_menor && dia > dia_menor);
 
             if (es_menor)
             {

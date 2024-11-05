@@ -5,8 +5,8 @@ almacenar x en la posición i de un vector.
 
 El listado no se ingresa ordenado por posición.
 
-Informar la cantidad de números y el contenido delvector indicando la posición ocupada
-por cada número a partir de la primera posición.
+Informar la cantidad de números y el contenido delvector indicando la posición
+ocupada por cada número a partir de la primera posición.
 */
 
 #include <stdio.h>
@@ -81,7 +81,10 @@ int main()
 
     vaciar_vector(posiciones);
     ingresar_datos(vector, posiciones);
-    printf("La cantidad de números del vector son: %d\n", obtener_cantidad_numeros(posiciones));
+
+    printf("La cantidad de números del vector son: %d\n",
+        obtener_cantidad_numeros(posiciones));
+        
     imprimir_vector(vector, posiciones);
 
     return 0;

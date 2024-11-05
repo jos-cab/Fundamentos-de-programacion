@@ -35,7 +35,11 @@ void mostrar_matriz(t_matriz matriz, int ML_F, int ML_C)
     printf("\n");
 }
 
-void multiplicar_matrices(t_matriz matriz_1, t_matriz matriz_2, t_matriz resultado, int ML_F1, int ML_C1, int ML_F2, int ML_C2)
+void multiplicar_matrices(t_matriz matriz_1,
+                          t_matriz matriz_2,
+                          t_matriz resultado,
+                          int ML_F1, int ML_C1,
+                          int ML_F2, int ML_C2)
 {
     int i, j, k;
 
@@ -72,7 +76,8 @@ int main()
     t_matriz resultado;
     vaciar_matriz(resultado);
 
-    multiplicar_matrices(matriz_1, matriz_2, resultado, ML_F1, ML_C1, ML_F2, ML_C2);
+    multiplicar_matrices(matriz_1, matriz_2, resultado,
+                         ML_F1, ML_C1, ML_F2, ML_C2);
 
     // Para mostrar esto no valido si se pudo hacer la multiplicación
     printf("El resultado de multiplicar\n\n");

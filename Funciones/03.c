@@ -1,5 +1,6 @@
 /*
-3. Escribir una función que reciba un valor n, entero, y devuelva la suma de los valores entre 0 y n. 
+3. Escribir una función que reciba un valor n, entero, y devuelva la suma de los
+valores entre 0 y n. 
 */
 
 #include <stdio.h>

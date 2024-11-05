@@ -1,7 +1,9 @@
 /*
-22) Se tiene un listado de alumnos que consiste en número de padrón y 4 notas por alumno.
-Informar el mayor y el menor promedio registrado junto con el número de padrón del alumno,
-suponiendo que ambos son únicos.
+22) Se tiene un listado de alumnos que consiste en número de padrón y 4 notas
+por alumno.
+
+Informar el mayor y el menor promedio registrado junto con el número de padrón
+del alumno, suponiendo que ambos son únicos.
 */
 
 #include <stdio.h>
@@ -63,8 +65,11 @@ int main()
     } while (desea_continuar == 's');
     
 
-    printf("%u tiene el mayor promedio: %.2g \n", padron_mayor_promedio, mayor_promedio);
-    printf("%u tiene el menor promedio: %.2g \n", padron_menor_promedio, menor_promedio);
+    printf("%u tiene el mayor promedio: %.2g \n", 
+        padron_mayor_promedio, mayor_promedio);
+        
+    printf("%u tiene el menor promedio: %.2g \n",
+        padron_menor_promedio, menor_promedio);
 
     return 0;
 }

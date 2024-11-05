@@ -1,10 +1,12 @@
 /*
-5. Escribir un programa que solicite el ingreso de un texto que será enviado mediante un telegrama.
+5. Escribir un programa que solicite el ingreso de un texto que será enviado
+mediante un telegrama.
 
 Luego de ingresado, se deberá informar la cantidad de palabras que lo componen
 y el importe a abonar por el solicitante.
 
-El texto sólo puede contener, letras, números y los siguientes signos de puntuación:  . , ; : ()
+El texto sólo puede contener, letras, números y los siguientes signos de
+puntuación:  . , ; : ()
 
 Para el cálculo de las palabras,
 considerar que una palabra estará separada de otra, por uno ó más blancos.
@@ -24,9 +26,9 @@ typedef char string[ML];
 bool validar_caracter(char x)
 {
     return (
-        (x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z') || (x >= '0' && x <= '9') ||
-        (x == '.') || (x == ',') || (x == ';') || (x == ':') ||
-        (x == '(') || (x == ')') || (x == ' '));
+        (x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z') ||
+        (x >= '0' && x <= '9') || (x == '.') || (x == ',') ||
+        (x == ';') || (x == ':') || (x == '(') || (x == ')') || (x == ' '));
 }
 
 bool validar_telegrama(string cadena)
@@ -75,7 +77,8 @@ int contar_palabras(string cadena)
         i++;
     }
 
-    cantidad_palabras++; // Al contar las palabras a partir de los espacios cuento n-1 palabras.
+    // Al contar las palabras a partir de los espacios cuento n-1 palabras.
+    cantidad_palabras++;
 
     return cantidad_palabras;
 }
@@ -94,7 +97,8 @@ int calcular_aporte(string cadena)
         while (cadena[i + j] != '\0' && cadena[i + j] != ' ' && j < 3)
             j++;
 
-        if (j >= 3) // Con poner == alcanza, pero si por algun motivo se pasa funcionará bien
+        // Con "==" basta, pero funcionará si se pasa.
+        if (j >= 3)
             aporte += 10;
         else
             aporte += 8;
@@ -110,7 +114,6 @@ int calcular_aporte(string cadena)
 
 int main()
 {
-
     string telegrama;
 
     printf("Ingrese telegrama: ");
@@ -122,8 +125,11 @@ int main()
     }
     else
     {
-        printf("La cantidad de palabras en el telegrama es: %d\n", contar_palabras(telegrama));
-        printf("El importe a abonar es de: %d", calcular_aporte(telegrama));
+        printf("La cantidad de palabras en el telegrama es: %d\n",
+            contar_palabras(telegrama));
+
+        printf("El importe a abonar es de: %d",
+            calcular_aporte(telegrama));
     }
 
     return 0;
