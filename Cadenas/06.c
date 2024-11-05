@@ -1,10 +1,11 @@
 /*
 6. Escribir una función para validar una nueva clave de acceso
 
-La función deberá recibir una cadena de caracteres, que contendrá la clave candidata,
-ingresada previamente por el usuario.
+La función deberá recibir una cadena de caracteres, que contendrá la clave
+candidata, ingresada previamente por el usuario.
 
-Devolverá true o false, dependiendo de si cumple o no con las siguientes condiciones:
+Devolverá true o false, dependiendo de si cumple o no con las siguientes
+condiciones:
 - La clave debe estar formada únicamente por, entre 4 y 8 caracteres numéricos
 - Los caracteres no pueden ser todos iguales
 
