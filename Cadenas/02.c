@@ -35,11 +35,8 @@ unsigned short int obtener_cantidad_caracteres_no_alfabeticos(string cadena){
 
 int main()
 {
-    string cadena_1 = "a{}bcde";
-    string cadena_2 = "1234567890";
-
-    printf("La cantidad de caracteres no alfabéticos de '%s' es: %hu\n", cadena_1, obtener_cantidad_caracteres_no_alfabeticos(cadena_1));
-    printf("La cantidad de caracteres no alfabéticos de '%s' es: %hu\n", cadena_2, obtener_cantidad_caracteres_no_alfabeticos(cadena_2));
+    printf("La cantidad de caracteres no alfabéticos de 'a{}bcde' es: %hu\n", obtener_cantidad_caracteres_no_alfabeticos("a{}bcde"));
+    printf("La cantidad de caracteres no alfabéticos de '1234567890' es: %hu\n", obtener_cantidad_caracteres_no_alfabeticos("1234567890"));
     
     return 0;
 }
