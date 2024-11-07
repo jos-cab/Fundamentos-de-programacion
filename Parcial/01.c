@@ -17,7 +17,7 @@ void obtener_mayor_digito_con_repeticiones(int numero,
     ultimo_digito = numero % 10;
     
 
-    // Tomo como mayor valor el último dígito para luego poder compararlo con
+    // defino como mayor valor el último dígito para luego poder compararlo con
     // los otros dígitos del número
     *mayor_digito = ultimo_digito;
     *repeticiones_mayor_digito = 1;
