@@ -43,7 +43,6 @@ unsigned short int cant_palabras(t_cadena cadena)
             i++;
     }
         
-    
     return cantidad_palabras;
 }
 
