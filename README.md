@@ -15,6 +15,10 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
     - [ ] Subprogramas
     - [ ] Vectores
 
+## Parcial
+
+Los ejercicios de parcial no tienen las consignas originales, solo una aproximación.
+
 ---
 
 Cualquier comentario, crítica o sugerencia no dudes en hacer un issue :)
