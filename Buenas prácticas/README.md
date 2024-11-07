@@ -36,7 +36,7 @@ for(i = 0; i < ML; i++)
 int numero_1, numero_2, numero_3;
 int i;
 
-//...
+// ...
 
 for(i = 0; i < ML; i++)
     // ...
@@ -50,14 +50,20 @@ int numero; // variable gloabal
 
 void main()
 {
-    numero = 3;    
+    numero = 3;
+
+    for(int i = 0; i < numero; i++)
+        // ...
 }
 
 // ✅
 void main()
 {
-    int numero; // variable local
+    int numero, i; // variables locales
     numero = 3;
+
+    for(i = 0; i < numero; i++)
+        // ...
 }
 ```
 
