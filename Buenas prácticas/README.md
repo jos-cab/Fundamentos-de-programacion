@@ -147,7 +147,7 @@ bool validar_fecha(/*...*/);
 void preparar_cafe(/*...*/);
 ```
 
-9.  No tener varios puntos de retorno (tampoco early return).
+9. No tener varios puntos de retorno (tampoco early return).
 
 ```C
 // ❌
@@ -184,7 +184,7 @@ bool validar_fecha(int dia, int mes, int año)
 }
 ```
 
-10.    Los nombres de las funciones deben hacer precisamente lo que su nombre indica.
+10. Los nombres de las funciones deben hacer precisamente lo que su nombre indica.
 
 ```C
 // ❌
