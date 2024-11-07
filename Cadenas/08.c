@@ -9,7 +9,7 @@ Probar la función con los siguientes casos de prueba:
 - ojo (Es palíndromo)
 - radar (Es palíndromo)
 - reconocer (Es palíndromo)
-- amar a roma (Es palíndromo)
+- amar a roma (No es palíndromo)
 - ana lava lana (Es palíndromo)
 - a ti no, bonita (Es palíndromo)
 - algoritmos y programas (No es palíndromo)
