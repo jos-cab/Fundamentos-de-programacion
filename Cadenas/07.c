@@ -34,7 +34,7 @@ bool es_palindromo(t_cadena cadena)
 
     i = 0;
 
-    while(palindromo && i < cantidad_caracteres)
+    while(palindromo && i < (cantidad_caracteres / 2))
     {
         palindromo = cadena[i] == cadena[cantidad_caracteres - 1 - i];
         i++;
