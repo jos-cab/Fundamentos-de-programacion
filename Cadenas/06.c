@@ -58,6 +58,7 @@ bool son_todos_caracteres_numericos(t_cadena clave, int ML)
 
     while (son_todos_numericos && i < ML)
     {
+        // TODO: cambiar switch por condicion 0 <= clave[i] <= 9 
         switch (clave[i])
         {
             case '0':
