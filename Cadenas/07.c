@@ -1,5 +1,5 @@
 /*
-7.Escribir una función en C, que reciba una cadena que representa una palabra y
+7. Escribir una función en C, que reciba una cadena que representa una palabra y
 devuelva si la misma es o no un palíndromo.
 
 Una palabra es un palíndromo, si se lee igual en ambos sentidos.
