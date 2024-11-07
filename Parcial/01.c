@@ -14,19 +14,14 @@ void obtener_mayor_digito_con_repeticiones(int numero,
 {
     int ultimo_digito;
 
-    ultimo_digito = numero % 10;
-    
-
-    // defino como mayor valor el último dígito para luego poder compararlo con
-    // los otros dígitos del número
-    *mayor_digito = ultimo_digito;
+    *mayor_digito = 0; // Como mínimo mayor_dígito puede ser 0
     *repeticiones_mayor_digito = 1;
 
-    while (numero > 0)
+    do
     {
-        numero /= 10; // Elimino el último dígito del número
-
-        ultimo_digito = numero % 10;
+        // Obtengo el último dígito y lo elimino del número
+        ultimo_digito = numero % 10; 
+        numero /= 10;
         
         if (ultimo_digito > *mayor_digito)
         {
@@ -34,7 +29,7 @@ void obtener_mayor_digito_con_repeticiones(int numero,
             *repeticiones_mayor_digito = 1;
         } else if (ultimo_digito == *mayor_digito)
             (*repeticiones_mayor_digito)++; // Son importantes los paréntesis
-    }
+    } while (numero > 0);
     
 }
 
