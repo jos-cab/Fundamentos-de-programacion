@@ -13,27 +13,29 @@ está.
 
 typedef int TMatriz[MAX][MAX];
 
-void buscar_matriz(TMatriz matriz, int MLF, int MLC, 
-                   int x, 
-                   bool *numero_en_matriz)
+bool existe_en_matriz(TMatriz matriz, int MLF, int MLC, 
+                   int x)
 {
+    bool numero_en_matriz;
     int i, j;
 
     // Se debe definir la variable para compararla en los while
-    *numero_en_matriz = false;
+    numero_en_matriz = false;
 
     i = 0;
 
-    while (!*numero_en_matriz && i < MLF)
+    while (!numero_en_matriz && i < MLF)
     {
         j = 0;
 
-        while (!*numero_en_matriz && j < MLC)
+        while (!numero_en_matriz && j < MLC)
         {
-            *numero_en_matriz = matriz[i][j] == x;
+            numero_en_matriz = matriz[i][j] == x;
             j++;
         }
 
         i++;
     }
+
+    return numero_en_matriz;
 }
