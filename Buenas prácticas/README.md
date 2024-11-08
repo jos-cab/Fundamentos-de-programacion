@@ -92,7 +92,34 @@ while(!encontrado && i < ML) // Salgo si lo encontré
 }
 ```
 
-5. No usar breaks dentro de loops.
+5. No modificar la variable de control de manera erronea
+
+```C
+// ❌
+for(i = a; i >= b; i--)
+{
+    // ... 
+    i = divisor; // cambio la variable de control
+    // ...
+}
+
+// ✅
+// La variable de control solo debe servir como contador
+// O de manera tal que solo incremente o decremente en una cantidad fija
+int i;
+
+i = a;
+
+while(i >= b)
+{
+    // ...
+    
+    i--; // decrementa una unidad
+}
+```
+
+
+6. No usar breaks dentro de loops.
 
 ```C
 // ❌
@@ -106,7 +133,7 @@ for(i = 0; i < ML; i++)
     }
 ```
 
-6. No usar continue.
+7. No usar continue.
 
 ```C
 // ❌
@@ -118,7 +145,7 @@ for(i = 0; i < ML; i++)
         continue; // Sigo con la siguiente iteración
 ```
 
-7. No repetir código.
+8. No repetir código.
 
 ```C
 // ❌
@@ -140,7 +167,7 @@ do {
 } while(numero != 0);
 ```
 
-8. Modularizar.
+9. Modularizar.
 
 ```C
 // ❌
@@ -153,7 +180,7 @@ bool validar_fecha(/*...*/);
 void preparar_cafe(/*...*/);
 ```
 
-9. No tener varios puntos de retorno (tampoco early return).
+10. No tener varios puntos de retorno (tampoco early return).
 
 ```C
 // ❌
@@ -190,7 +217,7 @@ bool validar_fecha(int dia, int mes, int año)
 }
 ```
 
-10. Los nombres de las funciones deben hacer precisamente lo que su nombre indica.
+11. Los nombres de las funciones deben hacer precisamente lo que su nombre indica.
 
 ```C
 // ❌
@@ -214,7 +241,7 @@ void ordenar_y_mostrar_vector(t_vector vector, int ML)
 }
 ```
 
-11. Las funciones cuyos parámetros incluyen al menos un puntero deben ser del tipo void.
+12. Las funciones cuyos parámetros incluyen al menos un puntero deben ser del tipo void.
 
 ```C
 // ❌
