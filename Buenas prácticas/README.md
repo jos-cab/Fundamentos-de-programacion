@@ -92,7 +92,7 @@ while(!encontrado && i < ML) // Salgo si lo encontré
 }
 ```
 
-5. No modificar la variable de control de manera erronea
+5. No modificar la variable de control de manera erronea.
 
 ```C
 // ❌
