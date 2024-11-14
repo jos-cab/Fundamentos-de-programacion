@@ -29,6 +29,11 @@ void obtener_cantidad_vocales_y_numeros(Tmatriz matriz,
                 case 'i':
                 case 'o':
                 case 'u':
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
                     (*cantidad_vocales)++;
                     break;
             }
