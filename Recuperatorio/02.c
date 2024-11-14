@@ -17,17 +17,18 @@ bool buscar(Tvector vector, int ML, int x)
     izquierda = 0;
     derecha = ML - 1;
 
-    while ((!encontrado) && (izquierda <= derecha))
-    {
-        medio = (izquierda + derecha) / 2;
+    if ((vector[izquierda] < x) && (x < vector[derecha]))
+        while ((!encontrado) && (izquierda <= derecha))
+        {
+            medio = (izquierda + derecha) / 2;
 
-        if (vector[medio] == x)
-            encontrado = true;
-        else if(vector[medio] < x)
-            izquierda = medio + 1;
-        else // vector[medio] > x
-            derecha = medio - 1;
-    }
+            if (vector[medio] == x)
+                encontrado = true;
+            else if(vector[medio] < x)
+                izquierda = medio + 1;
+            else // vector[medio] > x
+                derecha = medio - 1;
+        }
     
     return encontrado;
 }
