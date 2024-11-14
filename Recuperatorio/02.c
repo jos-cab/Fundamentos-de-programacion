@@ -12,8 +12,9 @@ typedef int Tvector[MF];
 bool buscar(Tvector vector, int ML, int x)
 {
     int izquierda, medio, derecha;
-    bool encontrado = false;
+    bool encontrado;
 
+    encontrado = false;
     izquierda = 0;
     derecha = ML - 1;
 
