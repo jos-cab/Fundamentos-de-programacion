@@ -36,7 +36,5 @@ void obtener_cantidad_vocales_y_numeros(Tmatriz matriz,
             // también se puede juntar en el switch anterior
             if ('0' <= matriz[i][j] && matriz[i][j] <= '9')
                 (*cantidad_numeros)++;
-            
-        }
-    
+        }   
 }
