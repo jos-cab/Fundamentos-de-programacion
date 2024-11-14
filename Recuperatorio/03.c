@@ -1,7 +1,7 @@
 /*
 3) Con una matriz de char ya cargada devolver:
-  •Cantidad de vocales
-  •Cantidad de numeros
+  • Cantidad de vocales
+  • Cantidad de numeros
 */
 
 #define MF_F 150
