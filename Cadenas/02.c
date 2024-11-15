@@ -6,33 +6,34 @@ No tener en cuenta la ñ, ni las vocales acentuadas.
 */
 
 #include <stdio.h>
+#include <stdbool.h>
 
 #define MAX 15
 
 typedef char string[MAX];
 
+bool es_letra(char caracter)
+{
+    return ('a' <= caracter && caracter <= 'z') || 
+           ('A' <= caracter && caracter <= 'Z');
+}
+
 unsigned short int obtener_cantidad_caracteres_no_alfabeticos(string cadena){
-    // cuento la cantidad de caracteres alfabéticos y lo sustraigo de la 
-    // cantidad de caracteres totales de la cadena
-    unsigned short int cantidad_caracteres_alfabeticos;
-    unsigned short int cantidad_caracteres_cadena;
+    unsigned short int cantidad_caracteres_no_alfabeticos;
     int i;
 
-    cantidad_caracteres_alfabeticos = 0;
-    cantidad_caracteres_cadena = 0;
+    cantidad_caracteres_no_alfabeticos = 0;
     i = 0;
 
     while (cadena[i] != '\0')
     {
-        if (('a' <= cadena[i] && cadena[i] <= 'z') || 
-            ('A' <= cadena[i] && cadena[i] <= 'Z'))
-            cantidad_caracteres_alfabeticos++;
+        if (!es_letra(cadena[i]))
+            cantidad_caracteres_no_alfabeticos++;
 
-        cantidad_caracteres_cadena++;
         i++;
     }
     
-    return cantidad_caracteres_cadena - cantidad_caracteres_alfabeticos;
+    return cantidad_caracteres_no_alfabeticos;
 }
 
 int main()
