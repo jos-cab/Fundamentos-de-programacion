@@ -70,16 +70,28 @@ bool hay_oraciones_iguales(oracion_t oracion_1,
     return oraciones_iguales;
 }
 
-void buscar_subcadena(oracion_t subcadena,
-                      oracion_t oracion_1, 
-                      oracion_t oracion_2,
-                      oracion_t oracion_3)
+bool contiene_subcadena(oracion_t subcadena,
+                        oracion_t oracion)
 {
-    bool existe_subcadena;
+    int i, j;
+    bool encontrado;
 
-    // if (subcadena in oracion_1)
-    if (strcmp(strstr(subcadena, oracion_1), "") != 0)
-        existe_subcadena = true;
+    // NO funciona
+    //
+    // if (subcadena in oracion)
+    /*
+    if (strcmp(strstr(subcadena, oracion), oracion) == 0)
+        encontrado = true;
+    else
+        encontrado = false;
+    */
+
+    if (strstr(subcadena, oracion) != NULL)
+        encontrado = true;
+    else
+        encontrado = false;
+    
+    return encontrado;
 }
 
 int main()
@@ -102,13 +114,21 @@ int main()
     else
         printf("La oración más larga es la oración %hi\n", oracion_mas_larga);
 
-    if(hay_oraciones_iguales(oracion_1, oracion_2, oracion_3))
+    if (hay_oraciones_iguales(oracion_1, oracion_2, oracion_3))
         printf("Hay al menos dos oraciones iguales\n");
     else
         printf("Las tres oraciones son distintas\n");
     
     ingresar_oracion(subcadena);
-    buscar_subcadena(subcadena, oracion_1, oracion_2, oracion_3);
+    
+    if (contiene_subcadena(subcadena, oracion_1))
+        printf("%s se encuentra en la primera oración\n", subcadena);
+
+    if (contiene_subcadena(subcadena, oracion_2))
+        printf("%s se encuentra en la segunda oración\n", subcadena);
+
+    if (contiene_subcadena(subcadena, oracion_3))
+        printf("%s se encuentra en la tercera oración\n", subcadena);
 
     return 0;
 }
