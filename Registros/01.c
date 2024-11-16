@@ -13,7 +13,6 @@ uno por mil del sueldo por cada año cumplido.
 */
 
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_CANTIDAD_EMPLEADOS 100
 #define MAX_NOMBRE 35
