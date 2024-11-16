@@ -41,6 +41,8 @@ int main()
 {
     int i;
     unsigned short int ML = 10;
+    
+    /* Datos generados con IA */
     lista_empleados empleados = {
         { "Perez", "Juan", 15, 3, 1990, 1, 6, 2015, 45000.50 },
         { "Gomez", "Ana", 28, 8, 1985, 12, 10, 2010, 38000.00 },
