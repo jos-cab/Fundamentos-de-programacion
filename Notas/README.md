@@ -1,6 +1,44 @@
 # Notas
 
-1. Las variables de control (acumuladores) son variables que deben ser **inicializadas** y **actualizadas** de manera uniforme. Hacen que los bucles terminen cuando se deja de satisfacer una **condición**
+1. Las variables son usadas para guardar datos ingresados por usuarios o para guardar resultados de operaciones.
+
+**Importante:** las variables deben ser definidas o por el usuario (scanf) o manualmente.
+No se pueden imprimir o hacer comparaciones con variables que no tienen ningún valor, porque por defecto C les asigna un valor "basura".
+Esto quiere decir que en general una variable no definida guarda un número random.
+
+```C
+#include <stdio.h>
+
+// Es posible también hacer que la función main sea de tipo void, en tal caso no
+// es necesario retornar 0.
+
+// Se explicará mejor después el tema de retornos en funciones.
+
+// Por ahora lo más importante es que int (entero) debe retornar un número
+// y void (vacío) no devuelve nada.
+
+int main()
+{
+    // Todas las variables que se utilizarán se deben definir al inicio
+    int numero, cuadrado;
+
+    printf("Ingrese un número: ");
+    scanf("%i", &numero);
+    // Importante el ampersand (&) para guardar datos ingresados con scanf
+
+    printf("número ingresado: %i", numero);
+
+    printf("\n"); // Imprimo salto de línea (Es como apretar la tecla enter)
+
+    cuadrado = numero * numero;
+
+    printf("%i al cuadrado es: %i", numero, cuadrado);
+
+    return 0;
+}
+```
+
+2. Las variables de control (acumuladores) son variables que deben ser **inicializadas** y **actualizadas** de manera uniforme. Hacen que los bucles terminen cuando se deja de satisfacer una **condición**
 
 ```C
 // Por convención se le llama a la variable de control i. De necesitar más
@@ -45,32 +83,4 @@ for(i = 0; i < 10; i += 2)
     // ...
 
 // En el bucle anterior la variable de control tomará los valores: 0, 2, 4, 6 y 8
-```
-
-2. Otros tipos de variables son usadas para guardar datos ingresados por usuarios o para guardar resultados de operaciones.
-
-```C
-#include <stdio.h>
-
-// Es posible también hacer que la función main sea de tipo void, en tal caso no
-// es necesario retornar 0
-int main()
-{
-    // Todas las variables que se utilizarán se deben definir al inicio
-    int numero, cuadrado;
-
-    printf("Ingrese un número: ");
-    scanf("%i", &numero);
-    // Importante el ampersand (&) para guardar datos ingresados con scanf
-
-    printf("número ingresado: %i", numero);
-
-    printf("\n"); // Imprimo salto de línea (Es como apretar la tecla enter)
-
-    cuadrado = numero * numero;
-
-    printf("%i al cuadrado es: %i", numero, cuadrado);
-
-    return 0;
-}
 ```
