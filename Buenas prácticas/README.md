@@ -262,3 +262,7 @@ void obtener_mayor_digito_y_frecuencia(int numero,
     // ...
 }
 ```
+
+---
+
+Ver [Notas](https://github.com/jos-cabrera/Fundamentos-de-programacion/blob/main/Notas/README.md) para más info.
