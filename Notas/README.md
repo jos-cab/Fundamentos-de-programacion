@@ -172,3 +172,66 @@ int resultado(int a, int b)
 // largo se puede llegar a complicar la lectura, por eso es mejor la primera
 // solución.
 ```
+
+5. Los punteros son tipos de variables en donde se guardan direcciones de memoria.
+   **Importante:** no usar punteros para todo, solo para ingresos de datos o para devolver más de un valor por función.
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int numero;
+    int *puntero; // Declaro el puntero
+
+    numero = 3;
+
+    puntero = &numero; // Al puntero le asigno la dirección de la variable numero
+
+    printf("%i", *puntero); // Imprimo lo que hay en la dirección guardada en puntero
+    printf("\n");
+    printf("%p", puntero); // Imprimo la dirección de memoria guardada en puntero
+
+    return 0;
+}
+
+// int *puntero: variable que guarda direcciones de memoria
+// &numero: con ampersand tomo la dirección de memoria de la variable número
+// *puntero: con asterisco verifico el contenido dentro de la dirección de memoria
+
+// ej:
+// numero está guardada en "8C77FFF724"
+// a puntero le asigno "8C77FFF724" (con &)
+// muestro lo que hay en "8C77FFF724" (con *)
+```
+
+```C
+// Leer primero la función main para mejor comprensión
+
+#include <stdbool.h> // biblioteca para utilizar valores booleanos (true y false)
+
+void es_par_es_positivo(int numero, bool *es_par, bool *es_positivo)
+{
+    if(numero % 2 == 0)
+        *es_par = true; // en la dirección de memoria (enviadas en main) guardo true
+    else
+        *es_par = false;
+
+    if(numero > 0)
+        *es_positivo = true;
+    else
+        *es_positivo = false;
+}
+
+int main()
+{
+    bool es_par, es_positivo;
+    int numero;
+
+    numero = 3;
+    es_par_es_positivo(numero, &es_par, &es_positivo);
+    // A la función le mando las direcciones de memoria de esas variables
+
+    return 0;
+}
+```
