@@ -104,3 +104,69 @@ if(numero == 3) // uso ==
 // " = " es para asignar
 // " == " es para comparar
 ```
+
+5. Las funciones tienen un tipo de retorno y un único tipo de retorno, a excepción de las funciones recursivas.
+
+```C
+// Las funciones tienen este aspecto:
+
+tipo nombre_de_funcion(parametros)
+{
+    cuerpo_de_la_funcion
+
+    return retorno_de_la_funcion
+}
+
+// Las funciones sirven para no repetir código, modularizar y hacer más legible
+// nuestros programas
+
+// Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
+// nombre_de_funcion: el nombre la función, util para saber qué hace la función
+// y luego ser llamada en otro lugar del programa.
+// parametros: variables que se van a utilizar en esa función y que se consiguen
+// externamente a la función.
+// cuerpo_de_la_funcion: instrucciones propias de la función
+// retorno_de_la_funcion: el valor que va a devolver como resultado la función
+
+// NOTA: Las variables pueden no retornar nada (deben ser del tipo void),
+// devolver un valor (deben tener un tipo definido distinto a void), o retornar
+// más de un valor (se explicará después, deben ser de tipo void y recibir como
+// parámetros punteros).
+```
+
+## Ejemplos de funciones
+
+```C
+void saludar()
+{
+    printf("Hola!\n");
+}
+```
+
+```C
+int sumar(int numero_1, int numero_2)
+{
+    int resultado;
+
+    resultado = numero_1 + numero_2;
+
+    return resultado;
+}
+
+// NOTA: El siguiente código hace idénticamente lo mísmo que el anterior, pero
+// es buena práctica hacer el código lo más legible posible
+
+int resultado(int a, int b)
+{
+    return a + b;
+}
+
+// "resultado" no me dice qué hace la función
+// las variables se llaman a y b pero es más limpio describir que son números
+// en vez de retornar diréctamente puedo crear una variable para definir dónde
+// voy a guardar el resultado de mi operación, en vez de retornar lo que
+// devuelve un cálculo.
+// En este ejemplo es sencillo entender qué hace el código, pero con código más
+// largo se puede llegar a complicar la lectura, por eso es mejor la primera
+// solución.
+```
