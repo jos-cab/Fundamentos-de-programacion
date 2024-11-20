@@ -161,11 +161,13 @@ int resultado(int a, int b)
     return a + b;
 }
 
-// "resultado" no me dice qué hace la función
+// "resultado" no me dice qué hace la función.
+//
 // las variables se llaman a y b pero es más limpio describir que son números
 // en vez de retornar diréctamente puedo crear una variable para definir dónde
 // voy a guardar el resultado de mi operación, en vez de retornar lo que
 // devuelve un cálculo.
+//
 // En este ejemplo es sencillo entender qué hace el código, pero con código más
 // largo se puede llegar a complicar la lectura, por eso es mejor la primera
 // solución.
