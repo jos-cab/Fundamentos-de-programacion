@@ -105,7 +105,7 @@ if(numero == 3) // uso ==
 // " == " es para comparar
 ```
 
-5. Las funciones tienen un tipo de retorno y un único tipo de retorno, a excepción de las funciones recursivas.
+4. Las funciones tienen un tipo de retorno y un único tipo de retorno, a excepción de las funciones recursivas.
 
 ```C
 // Las funciones tienen este aspecto:
