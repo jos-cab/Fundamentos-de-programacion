@@ -90,3 +90,17 @@ for(i = 0; i < 10; i += 2)
 
 // En el bucle anterior la variable de control tomará los valores: 0, 2, 4, 6 y 8
 ```
+
+3. Las condiciones de igualdad son diferentes a las asignaciones.
+
+```C
+int numero;
+
+numero = 3; // uso =
+
+if(numero == 3) // uso ==
+    printf("El número es igual a 3");
+
+// " = " es para asignar
+// " == " es para comparar
+```
