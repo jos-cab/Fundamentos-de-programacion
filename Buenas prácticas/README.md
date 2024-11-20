@@ -87,7 +87,7 @@ while(!encontrado && i < ML) // Salgo si lo encontré
 {
     if(vector[i] == x)
         encontrado = true;
-    
+
     i++;
 }
 ```
@@ -98,7 +98,7 @@ while(!encontrado && i < ML) // Salgo si lo encontré
 // ❌
 for(i = a; i >= b; i--)
 {
-    // ... 
+    // ...
     i = divisor; // cambio la variable de control
     // ...
 }
@@ -113,11 +113,10 @@ i = a;
 while(i >= b)
 {
     // ...
-    
+
     i--; // decrementa una unidad
 }
 ```
-
 
 6. No usar breaks dentro de loops.
 
@@ -180,7 +179,7 @@ bool validar_fecha(/*...*/);
 void preparar_cafe(/*...*/);
 ```
 
-10. No tener varios puntos de retorno (tampoco early return).
+10. No tener varios puntos de retorno, excepto en funciones recursivas.
 
 ```C
 // ❌
@@ -190,9 +189,9 @@ bool validar_fecha(int dia, int mes, int año)
 
     fecha_valida = false;
 
-    if (!(1 <= mes <= 12))
+    if (!(1 <= mes && mes <= 12))
         return false; // Ya se que la fecha está mal
-    
+
     switch(mes)
         //...
 
@@ -200,20 +199,12 @@ bool validar_fecha(int dia, int mes, int año)
 }
 
 // ✅
-bool validar_fecha(int dia, int mes, int año)
+unsigned long int factorial(int n)
 {
-    bool fecha_valida;
+    if(n == 0)
+        return 1;
 
-    fecha_valida = true;
-    
-    if (!(1 <= mes <= 12))
-        fecha_valida = false;
-    
-    if(fecha_valida)
-        switch(mes)
-            //...
-
-    return fecha_valida;
+    return (n * factorial(n - 1));
 }
 ```
 
@@ -245,11 +236,11 @@ void ordenar_y_mostrar_vector(t_vector vector, int ML)
 
 ```C
 // ❌
-int obtener_mayor_digito_y_frecuencia(int numero, 
+int obtener_mayor_digito_y_frecuencia(int numero,
                                       int *mayor_digito)
 {
     int frecuencia_mayor_digito, digito;
-    
+
     // ...
     *mayor_digito = digito;
     // ...
