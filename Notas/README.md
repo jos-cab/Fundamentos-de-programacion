@@ -74,6 +74,12 @@ int i;
 
 // En el bucle for se definen los tres pasos subrallados en negrita:
 // definición, condición, actualización
+// Pero la declaración de la variable debe estar afuera
+
+// No hacer: for(int i = 0; i < 3; i++)
+
+// Tampoco se debe actualizar la variable de control dentro del bucle for
+
 for(i = 0; i < 3; i++)
     // ...
 
