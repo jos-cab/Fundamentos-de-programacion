@@ -208,12 +208,13 @@ int main()
 ```C
 // Leer primero la función main para mejor comprensión
 
-#include <stdbool.h> // biblioteca para utilizar valores booleanos (true y false)
+#include <stdbool.h> // Biblioteca para utilizar valores booleanos (true y false)
 
+// De la siguiente manera puedo devolver más de un valor con una función
 void es_par_es_positivo(int numero, bool *es_par, bool *es_positivo)
 {
     if(numero % 2 == 0)
-        *es_par = true; // en la dirección de memoria (enviadas en main) guardo true
+        *es_par = true; // En la dirección de memoria (enviadas en main) guardo true
     else
         *es_par = false;
 
@@ -231,6 +232,134 @@ int main()
     numero = 3;
     es_par_es_positivo(numero, &es_par, &es_positivo);
     // A la función le mando las direcciones de memoria de esas variables
+
+    return 0;
+}
+```
+
+6. Los arreglos son estructuras en donde se pueden guardar datos como lo hacen las variables, pero de una forma ordenada y en mayor cantidad. Pueden ser de tamaño dinámico (se explicará más adelante) o estático, con máximos lógicos y físicos.
+
+```C
+#define MF 10 // Máximo físico de 10 elementos
+
+typedef int t_vector[MF]; // Defino vector de máximo 10 elementos
+
+int main()
+{
+    t_vector vector = {1, 2, 3}; // Hago un vector con 3 elementos
+    int ML = 3; // El máximo lógico es la cantidad de elementos definidos en el vector
+
+    return 0;
+}
+
+// MF: Cantidad máxima de elementos (no se puede alterar una vez iniciado el programa)
+// ML: Cantidad utilizada de elementos (no puede ser mayor a MF)
+```
+
+```C
+#include <stdio.h>
+
+#define MF_F 5  // Máximo de 5 filas
+#define MF_C 15 // Máximo de 15 columnas
+
+typedef char t_matriz[MF_F][MF_C]; // Matriz de caracteres de máximo 5 filas x 15 columnas
+
+// En este ejemplo la función cargar datos ingresa datos hasta que se ingrese un -1
+//
+// Notar que tanto los vectores como las matrices (como estructuras de cualquier
+// número de dimensiones) no necesitan & para ser modificados por una función,
+// ya que siempre se envía un puntero con su referencia.
+//
+// La función cargar_datos es de tipo void porque no necesito devolver nada.
+
+void cargar_datos(t_matriz matriz)
+{
+    int i, j, elemento;
+
+    i = 0;
+    elemento = 0; // Lo defino para poder hacer la primera comparación del while
+
+    while ((i < MF_F) && (elemento != -1)) // Por cada fila
+    {
+        j = 0;
+
+        while ((j < MF_C) && (elemento != -1)) // por cada elemento de cada fila
+        {
+            scanf("%i", &elemento); // Ingreso el elemento [i][j]
+
+            // Si elemento = -1 entonces luego cuando quiera saber dónde termina
+            // la matríz tengo que ver dónde hay un -1, así que no necesito
+            // máximos lógicos.
+            matriz[i][j] = elemento;
+
+            j++;
+        }
+
+        i++;
+    }
+
+    // Importante hacer un seguimiento de las variables de control a la hora de
+    // programar para que el programa no termine antes ni después.
+}
+
+int main()
+{
+    int ML_F, ML_C;
+    t_matriz matriz;
+
+    cargar_datos(matriz);
+
+    return 0;
+}
+```
+
+```C
+#include <stdio.h>
+
+#define MF 5
+
+typedef int t_vector[MF];
+
+void cargar_datos(t_vector vector)
+{
+    int i;
+
+    for(i = 0; i < MF; i++) // En este caso esta función llena completamente el vector
+        scanf("%i", &vector[i]);
+}
+
+int main()
+{
+    t_vector vector;
+
+    cargar_datos(vector);
+
+    return 0;
+}
+```
+
+```C
+#include <stdio.h>
+
+#define MF_F 2
+#define MF_C 3
+
+typedef int t_matriz[MF_F][MF_C];
+
+void cargar_datos(t_matriz matriz)
+{
+    int i, j;
+
+    for(i = 0; i < MF_F; i++) // Por cada fila
+        for(j = 0; j < MF_C; j++) // Por cada elemento de cada fila
+            scanf("%i", &matriz[i][j]); // Ingreso elemento [i][j]
+}
+
+int main()
+{
+    t_matriz matriz;
+
+    cargar_datos(matriz);
 
     return 0;
 }
