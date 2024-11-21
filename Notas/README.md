@@ -132,6 +132,10 @@ tipo nombre_de_funcion(parametros)
 // devolver un valor (deben tener un tipo definido distinto a void), o retornar
 // más de un valor (se explicará después, deben ser de tipo void y recibir como
 // parámetros punteros).
+//
+// Las funciones que no tendrán interacción con el usuario y que su objetivo sea
+// devolver algún valor entonces deberán tener un tipo definido (diferente de
+// void).
 ```
 
 ## Ejemplos de funciones
@@ -171,6 +175,37 @@ int resultado(int a, int b)
 // En este ejemplo es sencillo entender qué hace el código, pero con código más
 // largo se puede llegar a complicar la lectura, por eso es mejor la primera
 // solución.
+```
+
+```C
+// El tipo long int es más grande que int, por lo que puedo hacer cálculos
+// con números más grandes
+long int factorial(int n)
+{
+    int i;
+    long resultado;
+
+    resultado = 1;
+
+    // Empiezo en 2 porque así me ahorro multiplicar por 1
+    for (i = 2; i < n; i++) // Importante no empezar en 0
+        resultado *= i;
+
+    return resultado;
+}
+```
+
+```C
+#define CANTIDAD_NOTAS 3
+
+float promedio(float nota_1, float nota_2, float nota_3)
+{
+    float resultado;
+
+    resultado = (nota_1 + nota_2 + nota_3) / CANTIDAD_NOTAS;
+
+    return resultado;
+}
 ```
 
 5. Los punteros son tipos de variables en donde se guardan direcciones de memoria.
@@ -360,6 +395,94 @@ int main()
     t_matriz matriz;
 
     cargar_datos(matriz);
+
+    return 0;
+}
+```
+
+```C
+#define MF 7
+
+typedef int t_vector[MF];
+
+void invertir_vector(t_vector vector, int ML)
+{
+    int i, aux;
+
+    // Recorro hasta la mitad del vector porque intercambio la primera mitad
+    // con la segunda mitad.
+    // El primero con el último, el segundo con el anteúltimo, etc.
+    for (i = 0; i <= ML / 2; i++)
+    {
+        // Las siguientes 3 líneas intercambian 2 números
+        aux = vector[i];
+        vector[i] = vector[ML - 1 - i];
+        vector[ML - 1 - i] = aux;
+    }
+}
+
+int main()
+{
+    t_vector vector = {1, 5, 7};
+    int ML = 3;
+
+    invertir_vector(vector, ML);
+
+    return 0;
+}
+```
+
+7. El objetivo de modularizar es poder reutilizar el código y simplificar el código. Un módulo debe tener pocas instrucciones, e intentar que cada uno realice una acción específica (sin modularizar de más).
+
+```C
+#include <stdio.h>
+#include <stdbool.h>
+
+void ingresar_numeros(int *numero_1, int *numero_2)
+{
+    scanf("%i", numero_1);
+    scanf("%i", numero_2);
+
+    if (*numero_1 < 0 || *numero_2 < 0)
+        printf("Los números deben ser positivos");
+    else if (*numero_1 > *numero_2)
+        printf("El primer número debe ser mayor o igual al segundo\n\n");
+}
+
+bool es_primo(int n)
+{
+    bool primo;
+    int i;
+
+    primo = true;
+    i = 2;
+
+    do
+        if (n % i == 0)
+            primo = false;
+        else
+            i++;
+    while (primo && i < n / 2);
+
+    return primo;
+}
+
+// Calculo los numeros primos que hay entre 2 números
+void calcular_primos(int numero_1, int numero_2)
+{
+    int i;
+
+    for (i = numero_1; i < numero_2; i++)
+        if (es_primo(i)) // Llamo a otro módulo
+            printf("%i ", i);
+}
+
+int main()
+{
+    int numero_1, numero_2;
+
+    ingresar_numeros(&numero_1, &numero_2);
+    calcular_primos(numero_1, numero_2);
 
     return 0;
 }
