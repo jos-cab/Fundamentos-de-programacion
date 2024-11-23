@@ -1,30 +1,32 @@
 # Notas
 
-1. Las variables son usadas para guardar datos ingresados por usuarios o para guardar resultados de operaciones.
+## Variables
 
-**Importante:** las variables deben ser definidas o por el usuario (scanf) o manualmente.
-No se pueden imprimir o hacer comparaciones con variables que no tienen ningún valor, porque por defecto C les asigna un valor "basura".
-Esto quiere decir que en general una variable no definida guarda un número random.
+Las variables son usadas para guardar datos ingresados por usuarios o para guardar resultados de operaciones.
 
 ```C
 #include <stdio.h>
 
-// Es posible también hacer que la función main sea de tipo void, en tal caso no
-// es necesario retornar 0.
+/*
+    La función main() es la función principal de cualquier programa en C.
+    Puede retornar un valor entero (int) o no retornar nada (void).
 
-// Se explicará mejor después el tema de retornos en funciones.
+    En general, int main() se usa para que el programa indique un código de
+    salida al sistema operativo (0 significa que todo salió bien).
+*/
 
-// Por ahora lo más importante es que int (entero) debe retornar un número
-// y void (vacío) no devuelve nada.
 
 int main()
 {
     // Todas las variables que se utilizarán se deben definir al inicio
+    // Por defecto las variables no definidas (ya sea manualmente con el
+    // operador " = " o por entrada del usuario) tienen un valor "basura", aleatorio.
     int numero, cuadrado;
 
     printf("Ingrese un número: ");
     scanf("%i", &numero);
     // Importante el ampersand (&) para guardar datos ingresados con scanf
+    // Se explicará mejor en el apartado de punteros
 
     printf("número ingresado: %i", numero);
 
@@ -38,7 +40,9 @@ int main()
 }
 ```
 
-2. Las variables de control (acumuladores) son variables que deben ser **inicializadas** y **actualizadas** de manera uniforme. Hacen que los bucles terminen cuando se deja de satisfacer una **condición**
+### Variables de control
+
+Las variables de control (acumuladores) son variables que deben ser **inicializadas** y **actualizadas** de manera uniforme. Hacen que los bucles terminen cuando se deja de satisfacer una **condición**
 
 ```C
 // Por convención se le llama a la variable de control i. De necesitar más
@@ -48,7 +52,7 @@ int i;
 i = 0; // Inicializo la variable de control
 
 // Es importante saber cuando usar for, while y do while
-while(i < 10) // Es importante controlar que la condición no genere un bucle infinito
+while (i < 10) // Es importante controlar que la condición no genere un bucle infinito
     i++; // Nunca olvidar actualizar la variable de control para no generar bucle infinito
 
 // En el bucle anterior la variable de control tomará valores de 0 a 9
@@ -91,7 +95,9 @@ for(i = 0; i < 10; i += 2)
 // En el bucle anterior la variable de control tomará los valores: 0, 2, 4, 6 y 8
 ```
 
-3. Las condiciones de igualdad son diferentes a las asignaciones.
+## Condiciones de igualdad
+
+Las condiciones de igualdad son diferentes a las asignaciones.
 
 ```C
 int numero;
@@ -105,7 +111,10 @@ if(numero == 3) // uso ==
 // " == " es para comparar
 ```
 
-4. Las funciones tienen un tipo de retorno y un único tipo de retorno, a excepción de las funciones recursivas.
+## Funciones
+
+Las funciones tienen un tipo de retorno y un único punto de retorno, a excepción de las funciones recursivas.
+sirven para no repetir código, modularizar y hacer más legible nuestros programas.
 
 ```C
 // Las funciones tienen este aspecto:
@@ -114,41 +123,47 @@ tipo nombre_de_funcion(parametros)
 {
     cuerpo_de_la_funcion
 
-    return retorno_de_la_funcion
+    return retorno_de_la_funcion // punto de retorno
 }
 
-// Las funciones sirven para no repetir código, modularizar y hacer más legible
-// nuestros programas
+/*
+    Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
 
-// Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
-// nombre_de_funcion: el nombre la función, util para saber qué hace la función
-// y luego ser llamada en otro lugar del programa.
-// parametros: variables que se van a utilizar en esa función y que se consiguen
-// externamente a la función.
-// cuerpo_de_la_funcion: instrucciones propias de la función
-// retorno_de_la_funcion: el valor que va a devolver como resultado la función
+    nombre_de_funcion: el nombre la función, util para saber qué hace la función
+    y luego ser llamada en otro lugar del programa.
 
-// NOTA: Las variables pueden no retornar nada (deben ser del tipo void),
-// devolver un valor (deben tener un tipo definido distinto a void), o retornar
-// más de un valor (se explicará después, deben ser de tipo void y recibir como
-// parámetros punteros).
-//
-// Las funciones que no tendrán interacción con el usuario y que su objetivo sea
-// devolver algún valor entonces deberán tener un tipo definido (diferente de
-// void).
+    parametros: variables que se van a utilizar en esa función y que se
+    consiguen externamente a la función.
+
+    cuerpo_de_la_funcion: instrucciones propias de la función
+
+    retorno_de_la_funcion: el valor que va a devolver como resultado la función
+*/
+
+/*
+    Las funciones que no tendrán interacción con el usuario y que su objetivo
+    sea devolver algún valor entonces deberán tener un tipo definido (diferente
+    de void).
+*/
 ```
 
-## Ejemplos de funciones
+Las funciones pueden tener diferentes cantidades de valores retornados según haga falta:
+
+- Ningún valor: deben ser del tipo void.
+- Un solo valor: deben tener un tipo definido distinto a void.
+- Más de un valor: deben ser de tipo void y recibir como parámetros punteros (se explicará mejor en el apartado de punteros)
+
+### Ejemplos de funciones
 
 ```C
-void saludar()
+void saludar() // No devuelve nada
 {
     printf("Hola!\n");
 }
 ```
 
 ```C
-int sumar(int numero_1, int numero_2)
+int sumar(int numero_1, int numero_2) // Devuelve un solo valor de tipo entero
 {
     int resultado;
 
@@ -164,18 +179,16 @@ int resultado(int a, int b)
 {
     return a + b;
 }
-
-// "resultado" no me dice qué hace la función.
-//
-// las variables se llaman a y b pero es más limpio describir que son números
-// en vez de retornar diréctamente puedo crear una variable para definir dónde
-// voy a guardar el resultado de mi operación, en vez de retornar lo que
-// devuelve un cálculo.
-//
-// En este ejemplo es sencillo entender qué hace el código, pero con código más
-// largo se puede llegar a complicar la lectura, por eso es mejor la primera
-// solución.
 ```
+
+¿Por qué está mal la última función?
+
+1. El nombre de la función, "resultado", no es claro. Es mejor usar un nombre que describa lo que hace, como "sumar".
+2. Las variables "a" y "b" no son descriptivas. Es preferible usar nombres como "numero_1" y "numero_2", que indican claramente su propósito.
+
+Aunque en este caso el código es simple, en funciones más complejas es fundamental mejorar la legibilidad para evitar confusión. Por eso, es preferible utilizar nombres descriptivos y, si es necesario, usar variables intermedias.
+
+En lo personal prefiero no abreviar nombres, como por ejemplo "numero_1" en vez de "num1", porque termina de ser completamente claro el propósito de mis variables o funciones.
 
 ```C
 // El tipo long int es más grande que int, por lo que puedo hacer cálculos
@@ -183,12 +196,12 @@ int resultado(int a, int b)
 long int factorial(int n)
 {
     int i;
-    long resultado;
+    long int resultado;
 
     resultado = 1;
 
     // Empiezo en 2 porque así me ahorro multiplicar por 1
-    for (i = 2; i < n; i++) // Importante no empezar en 0
+    for (i = 2; i <= n; i++) // Importante no empezar en 0
         resultado *= i;
 
     return resultado;
@@ -208,8 +221,10 @@ float promedio(float nota_1, float nota_2, float nota_3)
 }
 ```
 
-5. Los punteros son tipos de variables en donde se guardan direcciones de memoria.
-   **Importante:** no usar punteros para todo, solo para ingresos de datos o para devolver más de un valor por función.
+## Punteros
+
+Los punteros son tipos de variables en donde se guardan direcciones de memoria.
+**Importante:** no usar punteros para todo, solo para ingresos de datos o para devolver más de un valor por función.
 
 ```C
 #include <stdio.h>
@@ -223,21 +238,24 @@ int main()
 
     puntero = &numero; // Al puntero le asigno la dirección de la variable numero
 
-    printf("%i", *puntero); // Imprimo lo que hay en la dirección guardada en puntero
-    printf("\n");
-    printf("%p", puntero); // Imprimo la dirección de memoria guardada en puntero
+    printf("%i \n", *puntero); // Imprimo lo que hay en la dirección guardada en puntero
+    printf("%p \n", puntero); // Imprimo la dirección de memoria guardada en puntero
 
     return 0;
 }
 
-// int *puntero: variable que guarda direcciones de memoria
-// &numero: con ampersand tomo la dirección de memoria de la variable número
-// *puntero: con asterisco verifico el contenido dentro de la dirección de memoria
+/*
+    int *puntero: variable que guarda direcciones de memoria
+    &numero: con ampersand tomo la dirección de memoria de la variable número
+    *puntero: con asterisco verifico el contenido dentro de la dirección de memoria
+*/
 
-// ej:
-// numero está guardada en "8C77FFF724"
-// a puntero le asigno "8C77FFF724" (con &)
-// muestro lo que hay en "8C77FFF724" (con *)
+/*
+    Ej:
+    numero está guardada en "8C77FFF724"
+    a puntero le asigno "8C77FFF724" (con &)
+    muestro lo que hay en "8C77FFF724" (con *)
+*/
 ```
 
 ```C
@@ -248,15 +266,8 @@ int main()
 // De la siguiente manera puedo devolver más de un valor con una función
 void es_par_es_positivo(int numero, bool *es_par, bool *es_positivo)
 {
-    if(numero % 2 == 0)
-        *es_par = true; // En la dirección de memoria (enviadas en main) guardo true
-    else
-        *es_par = false;
-
-    if(numero > 0)
-        *es_positivo = true;
-    else
-        *es_positivo = false;
+    *es_par = numero % 2 == 0; // En la dirección de memoria (enviadas en main) guardo true o false
+    *es_positivo = numero > 0;
 }
 
 int main()
@@ -265,14 +276,17 @@ int main()
     int numero;
 
     numero = 3;
-    es_par_es_positivo(numero, &es_par, &es_positivo);
+
     // A la función le mando las direcciones de memoria de esas variables
+    es_par_es_positivo(numero, &es_par, &es_positivo);
 
     return 0;
 }
 ```
 
-6. Los arreglos son estructuras en donde se pueden guardar datos como lo hacen las variables, pero de una forma ordenada y en mayor cantidad. Pueden ser de tamaño dinámico (se explicará más adelante) o estático, con máximos lógicos y físicos.
+## Arreglos
+
+Los arreglos son estructuras en donde se pueden guardar datos como lo hacen las variables, pero de una forma ordenada y en mayor cantidad. Pueden ser de tamaño dinámico (se explicará más adelante) o estático, con máximos lógicos y físicos.
 
 ```C
 #define MF 10 // Máximo físico de 10 elementos
@@ -292,6 +306,32 @@ int main()
 ```
 
 ```C
+/*
+    Notar que tanto los vectores como las matrices (como estructuras de
+    cualquier número de dimensiones) no necesitan & para ser modificados por una
+    función, ya que siempre se envía un puntero con su referencia.
+*/
+void invertir_vector(t_vector vector, int ML)
+{
+    int i, aux;
+
+    /*
+        Recorro hasta la mitad del vector porque intercambio la primera mitad
+        con la segunda mitad.
+        El primero con el último, el segundo con el anteúltimo, etc.
+    */
+
+    for (i = 0; i <= ML / 2; i++)
+    {
+        // Intercambio los elementos
+        aux = vector[i];
+        vector[i] = vector[ML - 1 - i];
+        vector[ML - 1 - i] = aux;
+    }
+}
+```
+
+```C
 #include <stdio.h>
 
 #define MF_F 5  // Máximo de 5 filas
@@ -299,13 +339,12 @@ int main()
 
 typedef char t_matriz[MF_F][MF_C]; // Matriz de caracteres de máximo 5 filas x 15 columnas
 
-// En este ejemplo la función cargar datos ingresa datos hasta que se ingrese un -1
-//
-// Notar que tanto los vectores como las matrices (como estructuras de cualquier
-// número de dimensiones) no necesitan & para ser modificados por una función,
-// ya que siempre se envía un puntero con su referencia.
-//
-// La función cargar_datos es de tipo void porque no necesito devolver nada.
+/*
+    En este ejemplo la función cargar datos ingresa datos hasta que se ingrese
+    un -1.
+
+    La función cargar_datos es de tipo void porque no necesito devolver nada.
+*/
 
 void cargar_datos(t_matriz matriz)
 {
@@ -318,13 +357,16 @@ void cargar_datos(t_matriz matriz)
     {
         j = 0;
 
-        while ((j < MF_C) && (elemento != -1)) // por cada elemento de cada fila
+        while ((j < MF_C) && (elemento != -1)) // Por cada elemento de cada fila
         {
             scanf("%i", &elemento); // Ingreso el elemento [i][j]
 
-            // Si elemento = -1 entonces luego cuando quiera saber dónde termina
-            // la matríz tengo que ver dónde hay un -1, así que no necesito
-            // máximos lógicos.
+            /*
+                Cuando elemento sea "-1" se guardará en la matríz.
+                Para luego saber dónde termina la matríz sin usar máximos
+                lógicos recorro hasta encontrar ese -1.
+            */
+
             matriz[i][j] = elemento;
 
             j++;
@@ -336,105 +378,15 @@ void cargar_datos(t_matriz matriz)
     // Importante hacer un seguimiento de las variables de control a la hora de
     // programar para que el programa no termine antes ni después.
 }
-
-int main()
-{
-    int ML_F, ML_C;
-    t_matriz matriz;
-
-    cargar_datos(matriz);
-
-    return 0;
-}
 ```
 
-```C
-#include <stdio.h>
+## Modularización
 
-#define MF 5
-
-typedef int t_vector[MF];
-
-void cargar_datos(t_vector vector)
-{
-    int i;
-
-    for(i = 0; i < MF; i++) // En este caso esta función llena completamente el vector
-        scanf("%i", &vector[i]);
-}
-
-int main()
-{
-    t_vector vector;
-
-    cargar_datos(vector);
-
-    return 0;
-}
-```
+El objetivo de modularizar es poder reutilizar el código y simplificar el código. Un módulo debe tener pocas instrucciones, e intentar que cada uno realice una acción específica (sin modularizar de más).
 
 ```C
-#include <stdio.h>
+// Sugiero leer el código desde main
 
-#define MF_F 2
-#define MF_C 3
-
-typedef int t_matriz[MF_F][MF_C];
-
-void cargar_datos(t_matriz matriz)
-{
-    int i, j;
-
-    for(i = 0; i < MF_F; i++) // Por cada fila
-        for(j = 0; j < MF_C; j++) // Por cada elemento de cada fila
-            scanf("%i", &matriz[i][j]); // Ingreso elemento [i][j]
-}
-
-int main()
-{
-    t_matriz matriz;
-
-    cargar_datos(matriz);
-
-    return 0;
-}
-```
-
-```C
-#define MF 7
-
-typedef int t_vector[MF];
-
-void invertir_vector(t_vector vector, int ML)
-{
-    int i, aux;
-
-    // Recorro hasta la mitad del vector porque intercambio la primera mitad
-    // con la segunda mitad.
-    // El primero con el último, el segundo con el anteúltimo, etc.
-    for (i = 0; i <= ML / 2; i++)
-    {
-        // Las siguientes 3 líneas intercambian 2 números
-        aux = vector[i];
-        vector[i] = vector[ML - 1 - i];
-        vector[ML - 1 - i] = aux;
-    }
-}
-
-int main()
-{
-    t_vector vector = {1, 5, 7};
-    int ML = 3;
-
-    invertir_vector(vector, ML);
-
-    return 0;
-}
-```
-
-7. El objetivo de modularizar es poder reutilizar el código y simplificar el código. Un módulo debe tener pocas instrucciones, e intentar que cada uno realice una acción específica (sin modularizar de más).
-
-```C
 #include <stdio.h>
 #include <stdbool.h>
 
