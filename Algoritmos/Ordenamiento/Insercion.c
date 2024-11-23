@@ -12,5 +12,7 @@ void insercion(t_vector vector, int n)
             vector[i + 1] = vector[i];
             i--;
         }
+
+        vector[i + 1] = aux;
     }
 }
