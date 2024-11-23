@@ -125,27 +125,19 @@ tipo nombre_de_funcion(parametros)
 
     return retorno_de_la_funcion // punto de retorno
 }
-
-/*
-    Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
-
-    nombre_de_funcion: el nombre la función, util para saber qué hace la función
-    y luego ser llamada en otro lugar del programa.
-
-    parametros: variables que se van a utilizar en esa función y que se
-    consiguen externamente a la función.
-
-    cuerpo_de_la_funcion: instrucciones propias de la función
-
-    retorno_de_la_funcion: el valor que va a devolver como resultado la función
-*/
-
-/*
-    Las funciones que no tendrán interacción con el usuario y que su objetivo
-    sea devolver algún valor entonces deberán tener un tipo definido (diferente
-    de void).
-*/
 ```
+
+- Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
+
+- Nombre_de_funcion: el nombre la función, util para saber qué hace la función y luego ser llamada en otro lugar del programa.
+
+- Parametros: variables que se van a utilizar en esa función y que se consiguen externamente a la función.
+
+- Cuerpo de la funcion: instrucciones propias de la función.
+
+- Retorno de la funcion: el valor que va a devolver como resultado la función.
+
+Las funciones que no tendrán interacción con el usuario y que su objetivo sea devolver algún valor entonces deberán tener un tipo definido (diferente de void).
 
 Las funciones pueden tener diferentes cantidades de valores retornados según haga falta:
 
