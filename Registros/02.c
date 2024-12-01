@@ -20,6 +20,7 @@ Utilizar un esquema tipo menú.
 
 #define MAX_CANTIDAD_EMPLEADOS 100
 #define MAX_NOMBRE 35
+#define AÑO_ACTUAL 2024
 
 typedef struct
 {
@@ -33,7 +34,7 @@ typedef struct
     char localidad[MAX_NOMBRE];
     char provincia[MAX_NOMBRE];
     unsigned short int codigo_postal;
-    
+
     unsigned short int dia_nacimiento;
     unsigned short int mes_nacimiento;
     unsigned short int año_nacimiento;
@@ -45,39 +46,73 @@ typedef struct
 
 typedef empleado lista_empleados[MAX_CANTIDAD_EMPLEADOS];
 
-void ordenar_empleados_por(char campo[MAX_NOMBRE],
-                           lista_empleados empleados,
-                           int ML)
+void mostrar_empleados(lista_empleados empleados, int ML)
 {
-    empleado aux;
-    int i, j;
-    unsigned short int item_1_numero;
-    unsigned short int item_2_numero;
-    char item_1_string[MAX_NOMBRE];
-    char item_2_string[MAX_NOMBRE];
+    int i;
 
-
+    printf("Nombre completo, Legajo, Domicilio, Localidad, Provincia, Código Postal, Fecha de nacimiento, Fecha de ingreso\n\n");
 
     for (i = 0; i < ML; i++)
     {
-        for (j = i; j < ML; j++)
-        {
-            if (item_2_numero > item_1_numero)
-            {
-                aux = empleados[i];
-                empleados[i] = empleados[j];
-                empleados[j] = aux;
-            }
-            
-        }
-        
+        printf("%s %s, %i, %s %i, %s, %s, %i, %i/%i/%i, %i/%i/%i\n",
+               empleados[i].apellido, empleados[i].nombre, empleados[i].legajo,
+               empleados[i].calle, empleados[i].numero_calle,
+               empleados[i].localidad, empleados[i].provincia,
+               empleados[i].codigo_postal, empleados[i].dia_nacimiento,
+               empleados[i].mes_nacimiento, empleados[i].año_nacimiento,
+               empleados[i].dia_ingreso, empleados[i].mes_ingreso,
+               empleados[i].año_ingreso);
     }
-    
+}
+void ordenar_empleados_por(int campo, lista_empleados empleados, int ML)
+{
+    int i, j;
+    int comparacion;
+    empleado temp;
+
+    comparacion = 0;
+
+    for (i = 0; i < ML - 1; i++)
+        for (j = 0; j < ML - i - 1; j++)
+        {
+            switch (campo)
+            {
+            case 1:
+                comparacion = strcmp(empleados[j].apellido, empleados[j + 1].apellido) ||
+                              (strcmp(empleados[j].apellido, empleados[j + 1].apellido) == 0 &&
+                               strcmp(empleados[j].nombre, empleados[j + 1].nombre));
+                break;
+            case 2:
+                comparacion = empleados[j].legajo > empleados[j + 1].legajo;
+                break;
+            case 3:
+                comparacion = (AÑO_ACTUAL - empleados[j].año_nacimiento) >
+                              (AÑO_ACTUAL - empleados[j + 1].año_nacimiento);
+                break;
+            case 4:
+                comparacion = (AÑO_ACTUAL - empleados[j].año_ingreso) >
+                              (AÑO_ACTUAL - empleados[j + 1].año_ingreso);
+                break;
+            case 5:
+                comparacion = strcmp(empleados[j].localidad, empleados[j + 1].localidad);
+                break;
+            }
+
+            if (comparacion > 0)
+            {
+                temp = empleados[j];
+                empleados[j] = empleados[j + 1];
+                empleados[j + 1] = temp;
+            }
+        }
 }
 
 int main()
 {
-    int ML = 10;
+    int campo_num;
+    int ML;
+
+    ML = 10;
 
     /* Datos generados con IA */
     lista_empleados empleados = {
@@ -90,10 +125,15 @@ int main()
         {"Álvarez", "Martín", 1007, "Calle Vuelta", 789, "Mendoza", "Mendoza", 5500, 5, 12, 1986, 7, 4, 2013},
         {"Hernández", "Elena", 1008, "Calle Paraná", 100, "Tucumán", "Tucumán", 4000, 17, 6, 1994, 6, 8, 2019},
         {"Sánchez", "Raúl", 1009, "Av. 9 de Julio", 501, "CABA", "Buenos Aires", 1002, 22, 11, 1980, 15, 7, 2016},
-        {"Díaz", "Sofía", 1010, "Calle Brasil", 231, "Salta", "Salta", 4400, 8, 3, 1991, 1, 2, 2020}
-    };
+        {"Díaz", "Sofía", 1010, "Calle Brasil", 231, "Salta", "Salta", 4400, 8, 3, 1991, 1, 2, 2020}};
 
-    ordenar_empleados_por("Legajo", empleados, ML);
+    printf("Ingrese el número del campo por el cual desea ordenar los empleados:\n");
+    printf("1. Nombre y Apellido\n2. Legajo\n3. Edad\n4. Antigüedad\n5. Localidad\n");
+    printf("\n> ");
+    scanf("%d", &campo_num);
+
+    ordenar_empleados_por(campo_num, empleados, ML);
+    mostrar_empleados(empleados, ML);
 
     return 0;
 }
