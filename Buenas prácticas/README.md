@@ -265,4 +265,4 @@ void obtener_mayor_digito_y_frecuencia(int numero,
 
 ---
 
-Ver [Notas](https://github.com/jos-cabrera/Fundamentos-de-programacion/blob/main/Notas/README.md) para más info.
+Ver [Notas](https://github.com/jos-cabrera/Fundamentos-de-programacion/blob/main/Notas/README.md) y [Notas 2](https://github.com/jos-cabrera/Fundamentos-de-programacion/tree/main/Notas%202) para más info.
