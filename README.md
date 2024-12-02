@@ -10,7 +10,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 -   [ ] Subprogramas: 13 - 31
 -   [x] Vectores
 -   [x] Cadenas
--   [ ] Registros: 2-5
+-   [x] Registros
 -   [ ] Archivos: 8-11
 -   [ ] Recursividad: 6-14
 -   [ ] Consistencia (Nombres de viariables, funciones, tipos de datos, etc.).
