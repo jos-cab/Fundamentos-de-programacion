@@ -27,6 +27,7 @@ int calcular_numero_invertido(int numero)
 	return invertido;
 }
 
+// Para la versión recursiva de la siguiente función ver ejercicio 11
 int elevado(int base, int exponente)
 {
 	int resultado;
