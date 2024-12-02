@@ -33,6 +33,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
     -   [ ] Registros
     -   [ ] Archivos
     -   [ ] Recursividad
+-   [ ] Notas 2
 
 ---
 
