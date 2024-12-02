@@ -127,23 +127,23 @@ tipo nombre_de_funcion(parametros)
 }
 ```
 
-- Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
+-   Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
 
-- Nombre_de_funcion: el nombre la función, util para saber qué hace la función y luego ser llamada en otro lugar del programa.
+-   Nombre_de_funcion: el nombre la función, util para saber qué hace la función y luego ser llamada en otro lugar del programa.
 
-- Parametros: variables que se van a utilizar en esa función y que se consiguen externamente a la función.
+-   Parametros: variables que se van a utilizar en esa función y que se consiguen externamente a la función.
 
-- Cuerpo de la funcion: instrucciones propias de la función.
+-   Cuerpo de la funcion: instrucciones propias de la función.
 
-- Retorno de la funcion: el valor que va a devolver como resultado la función.
+-   Retorno de la funcion: el valor que va a devolver como resultado la función.
 
 Las funciones que no tendrán interacción con el usuario y que su objetivo sea devolver algún valor entonces deberán tener un tipo definido (diferente de void).
 
 Las funciones pueden tener diferentes cantidades de valores retornados según haga falta:
 
-- Ningún valor: deben ser del tipo void.
-- Un solo valor: deben tener un tipo definido distinto a void.
-- Más de un valor: deben ser de tipo void y recibir como parámetros punteros (se explicará mejor en el apartado de punteros)
+-   Ningún valor: deben ser del tipo void.
+-   Un solo valor: deben tener un tipo definido distinto a void.
+-   Más de un valor: deben ser de tipo void y recibir como parámetros punteros (se explicará mejor en el apartado de punteros)
 
 ### Ejemplos de funciones
 
@@ -431,3 +431,9 @@ int main()
     return 0;
 }
 ```
+
+---
+
+Si no las leíste, te recomiendo leer [Buenas prácticas](https://github.com/jos-cabrera/Fundamentos-de-programacion/tree/main/Buenas%20pr%C3%A1cticas).
+
+Segunda parte: [Notas 2](https://github.com/jos-cabrera/Fundamentos-de-programacion/tree/main/Notas%202).
