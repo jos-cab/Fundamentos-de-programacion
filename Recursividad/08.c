@@ -6,6 +6,10 @@ parámetro es capicúa.
 #include <stdio.h>
 #include <stdbool.h>
 
+// Las funciones calcular_numero_invertido y elevado pueden ser recursivas, pero
+// para hacer más fácil la resolución y para evitar usar parámetros de más en la
+// función es_capicua decidí hacerlas iterativas.
+
 int calcular_numero_invertido(int numero)
 {
 	int invertido, digito;
@@ -49,11 +53,11 @@ bool es_capicua(int numero)
 		return true;
 	else if (primer_digito == ultimo_digito)
 	{
-		// saco el primer dígito
+		// Saco el primer dígito
 		numero = calcular_numero_invertido(numero) / 10;
 		numero = calcular_numero_invertido(numero);
 
-		// saco el ultimo dígito
+		// Saco el ultimo dígito
 		numero /= 10;
 
 		return es_capicua(numero);
