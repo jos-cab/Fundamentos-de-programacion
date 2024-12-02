@@ -21,6 +21,8 @@ Utilizar un esquema tipo menú.
 #define MAX_CANTIDAD_EMPLEADOS 100
 #define MAX_NOMBRE 35
 #define AÑO_ACTUAL 2024
+#define MES_ACTUAL 12
+#define DIA_ACTUAL 1
 
 typedef struct
 {
@@ -86,12 +88,32 @@ void ordenar_empleados_por(int campo, lista_empleados empleados, int ML)
                 comparacion = empleados[j].legajo > empleados[j + 1].legajo;
                 break;
             case 3:
-                comparacion = (AÑO_ACTUAL - empleados[j].año_nacimiento) >
-                              (AÑO_ACTUAL - empleados[j + 1].año_nacimiento);
+                comparacion = empleados[j].año_nacimiento >
+                                  empleados[j + 1].año_nacimiento ||
+                              (empleados[j].año_nacimiento ==
+                                   empleados[j + 1].año_nacimiento &&
+                               empleados[j].mes_nacimiento >
+                                   empleados[j + 1].mes_nacimiento) ||
+                              (empleados[j].año_nacimiento ==
+                                   empleados[j + 1].año_nacimiento &&
+                               empleados[j].mes_nacimiento ==
+                                   empleados[j + 1].mes_nacimiento &&
+                               empleados[j].dia_nacimiento >
+                                   empleados[j + 1].dia_nacimiento);
                 break;
             case 4:
-                comparacion = (AÑO_ACTUAL - empleados[j].año_ingreso) >
-                              (AÑO_ACTUAL - empleados[j + 1].año_ingreso);
+                comparacion = empleados[j].año_ingreso >
+                                  empleados[j + 1].año_ingreso ||
+                              (empleados[j].año_ingreso ==
+                                   empleados[j + 1].año_ingreso &&
+                               empleados[j].mes_ingreso >
+                                   empleados[j + 1].mes_ingreso) ||
+                              (empleados[j].año_ingreso ==
+                                   empleados[j + 1].año_ingreso &&
+                               empleados[j].mes_ingreso ==
+                                   empleados[j + 1].mes_ingreso &&
+                               empleados[j].dia_ingreso >
+                                   empleados[j + 1].dia_ingreso);
                 break;
             case 5:
                 comparacion = strcmp(empleados[j].localidad, empleados[j + 1].localidad);
