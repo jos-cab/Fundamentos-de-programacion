@@ -12,7 +12,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 -   [x] Cadenas
 -   [x] Registros
 -   [ ] Archivos: 8-11
--   [ ] Recursividad: 6-14
+-   [x] Recursividad
 -   [ ] Consistencia (Nombres de viariables, funciones, tipos de datos, etc.).
     -   [x] Ejercicios básicos
     -   [x] Funciones
