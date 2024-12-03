@@ -102,12 +102,12 @@ void guardar_cantdiad_alumnos_por_año_y_division(lista_alumnos_t alumnos, int M
 	{
 		año = alumnos[i].año;
 
-		while ((alumnos[i].año == año))
+		while ((alumnos[i].año == año) && (i < ML))
 		{
 			cantidad_alumnos = 0;
 			division = alumnos[i].division;
 
-			while (alumnos[i].division == division)
+			while ((alumnos[i].division == division) && (i < ML))
 			{
 				cantidad_alumnos++;
 				i++;
