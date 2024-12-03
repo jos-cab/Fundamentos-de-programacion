@@ -7,7 +7,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 -   [x] Ejercicios básicos
 -   [x] Funciones
 -   [x] Modularización
--   [ ] Subprogramas: 13 - 31
+-   [ ] Subprogramas: 14 - 31
 -   [x] Vectores
 -   [x] Cadenas
 -   [x] Registros
