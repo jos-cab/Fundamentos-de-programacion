@@ -40,4 +40,5 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 
 ---
 
+[Clases grabadas](https://www.youtube.com/playlist?list=PLV62NyWg44BY7Y3LNlhNx27yr_-79SGI_)
 Cualquier comentario, crítica o sugerencia no dudes en hacer un issue :)
