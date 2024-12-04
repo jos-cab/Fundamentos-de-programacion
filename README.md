@@ -8,31 +8,34 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 -   [x] Funciones
 -   [x] Modularización
 -   [x] Subprogramas
--   [x] Vectores
+-   [x] Arreglos
 -   [x] Cadenas
 -   [x] Registros
 -   [x] Archivos
 -   [x] Recursividad
+-   [ ] Memoria dinámica
 -   [ ] Consistencia (Nombres de viariables, funciones, tipos de datos, etc.).
     -   [x] Ejercicios básicos
     -   [x] Funciones
     -   [ ] Modularización
     -   [ ] Subprogramas
-    -   [ ] Vectores
+    -   [ ] Arreglos
     -   [ ] Cadenas
     -   [ ] Registros
     -   [ ] Archivos
     -   [ ] Recursividad
+    -   [ ] Memoria dinámica
 -   [ ] Optimizar
     -   [ ] Ejercicios básicos
     -   [ ] Funciones
     -   [ ] Modularización
     -   [ ] Subprogramas
-    -   [ ] Vectores
+    -   [ ] Arreglos
     -   [ ] Cadenas
     -   [ ] Registros
     -   [ ] Archivos
     -   [ ] Recursividad
+    -   [ ] Memoria dinámica
 -   [ ] Notas 2
 
 ---
