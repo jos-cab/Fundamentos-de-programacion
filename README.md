@@ -13,7 +13,8 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
 -   [x] Registros
 -   [x] Archivos
 -   [x] Recursividad
--   [ ] Memoria dinámica
+-   [x] Memoria dinámica
+-   [ ] TDA
 -   [ ] Consistencia (Nombres de viariables, funciones, tipos de datos, etc.).
     -   [x] Ejercicios básicos
     -   [x] Funciones
@@ -25,6 +26,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
     -   [ ] Archivos
     -   [ ] Recursividad
     -   [ ] Memoria dinámica
+    -   [ ] TDA
 -   [ ] Optimizar
     -   [ ] Ejercicios básicos
     -   [ ] Funciones
@@ -36,6 +38,7 @@ Resolución de las guías de C de la materia Fundamentos de programación cáted
     -   [ ] Archivos
     -   [ ] Recursividad
     -   [ ] Memoria dinámica
+    -   [ ] TDA
 -   [ ] Notas 2
 
 ---
