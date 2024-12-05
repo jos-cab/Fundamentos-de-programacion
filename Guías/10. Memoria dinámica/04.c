@@ -18,7 +18,6 @@ typedef struct {
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 typedef struct
 {
@@ -56,13 +55,13 @@ int main()
 	{
 		leer_datos(alumno);
 		mostrar_datos(alumno);
+
+		free(alumno);
 	}
 	else
 	{
 		printf("No se pudo reservar la memoria");
 	}
-
-	free(alumno);
 
 	return 0;
 }
