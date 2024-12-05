@@ -38,7 +38,7 @@ void mostrar_datos(int *numeros, int n)
 int main()
 {
 	int *numeros;
-	int n, i;
+	int n;
 
 	printf("Indique la cantidad de valores numeros a almacenar: ");
 	scanf("%i", &n);
