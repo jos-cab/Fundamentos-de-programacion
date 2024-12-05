@@ -58,13 +58,13 @@ int main()
 	{
 		ingresar_datos(alumno);
 		mostrar_datos(alumno);
+
+		free(alumno);
 	}
 	else
 	{
 		printf("No se pudo reservar la memoria");
 	}
-
-	free(alumno);
 
 	return 0;
 }
