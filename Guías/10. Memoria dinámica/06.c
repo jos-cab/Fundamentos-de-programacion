@@ -26,11 +26,7 @@ typedef struct
 
 t_alumno *crear_alumno()
 {
-	t_alumno *alumno;
-
-	alumno = malloc(sizeof(t_alumno));
-
-	return alumno;
+	return malloc(sizeof(t_alumno));
 }
 
 void ingresar_datos(t_alumno *alumno)
