@@ -29,25 +29,6 @@ t_alumno *crear_alumno()
 	return malloc(sizeof(t_alumno));
 }
 
-void ingresar_datos(t_alumno *alumno)
-{
-	printf("Ingrese el padron del alumno: ");
-	scanf("%d", &alumno->padron);
-
-	printf("Ingrese el nombre del alumno: ");
-	scanf("%s", alumno->nombre);
-
-	printf("Ingrese el apellido del alumno: ");
-	scanf("%s", alumno->apellido);
-}
-
-void mostrar_datos(t_alumno *alumno)
-{
-	printf("Padron: %d\n", alumno->padron);
-	printf("Nombre: %s\n", alumno->nombre);
-	printf("Apellido: %s\n", alumno->apellido);
-}
-
 int main()
 {
 	t_alumno *alumno;
@@ -56,8 +37,7 @@ int main()
 
 	if (alumno != NULL)
 	{
-		ingresar_datos(alumno);
-		mostrar_datos(alumno);
+		printf("Alumno creado con éxito\n");
 
 		free(alumno);
 	}
