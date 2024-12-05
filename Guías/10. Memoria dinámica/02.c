@@ -3,7 +3,7 @@
 cierta cantidad de números numeros (n * int), este valor n debe ser ingresado
 por el usuario.
 
-Luego solicitarle que ingrese n valores numeros ingresados de a uno y
+Luego solicitarle que ingrese n valores numéricos ingresados de a uno y
 almacenarlos en la memoria previamente reservada.
 
 Mostrar luego todos los valores ingresados.
@@ -49,13 +49,13 @@ int main()
 	{
 		ingresar_datos(numeros, n);
 		mostrar_datos(numeros, n);
+
+		free(numeros);
 	}
 	else
 	{
 		printf("Error al reservar espacio de memoria.");
 	}
-
-	free(numeros);
 
 	return 0;
 }

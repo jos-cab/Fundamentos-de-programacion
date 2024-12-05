@@ -21,13 +21,12 @@ int main()
 		scanf("%d", puntero);
 
 		printf("El numero ingresado es: %d", *puntero);
+		free(puntero);
 	}
 	else
 	{
 		printf("No se pudo reservar la memoria");
 	}
-
-	free(puntero);
 
 	return 0;
 }
