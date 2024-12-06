@@ -1,18 +1,18 @@
 void insercion(t_vector vector, int n)
 {
-    int k, i, aux;
+    int i, j, aux;
 
-    for (k = 1; k < n; k++)
+    for (i = 1; i < n; i++)
     {
-        aux = vector[k];
-        i = k - 1;
+        aux = vector[i];
+        j = i - 1;
 
-        while ((i >= 0) && (aux < vector[i]))
+        while ((j >= 0) && (aux < vector[j]))
         {
-            vector[i + 1] = vector[i];
-            i--;
+            vector[j + 1] = vector[j];
+            j--;
         }
 
-        vector[i + 1] = aux;
+        vector[j + 1] = aux;
     }
 }
