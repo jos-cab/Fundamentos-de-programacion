@@ -2,7 +2,7 @@
 
 ## Variables
 
-Las variables son usadas para guardar datos ingresados por usuarios o para guardar resultados de operaciones.
+Las variables son usadas para guardar datos ingresados por usuarios o resultados de operaciones.
 
 ```C
 #include <stdio.h>
@@ -18,9 +18,8 @@ Las variables son usadas para guardar datos ingresados por usuarios o para guard
 
 int main()
 {
-    // Todas las variables que se utilizarán se deben definir al inicio
-    // Por defecto las variables no definidas (ya sea manualmente con el
-    // operador " = " o por entrada del usuario) tienen un valor "basura", aleatorio.
+    // Todas las variables que se utilizarán se deben definir al inicio.
+    // Por defecto, las variables no inicializadas tienen un valor "basura", aleatorio.
     int numero, cuadrado;
 
     printf("Ingrese un número: ");
@@ -28,9 +27,9 @@ int main()
     // Importante el ampersand (&) para guardar datos ingresados con scanf
     // Se explicará mejor en el apartado de punteros
 
-    printf("número ingresado: %i", numero);
+    printf("Número ingresado: %i", numero);
 
-    printf("\n"); // Imprimo salto de línea (Es como apretar la tecla enter)
+    printf("\n"); // Salto de línea (es como presionar Enter).
 
     cuadrado = numero * numero;
 
@@ -42,7 +41,8 @@ int main()
 
 ### Variables de control
 
-Las variables de control (acumuladores) son variables que deben ser **inicializadas** y **actualizadas** de manera uniforme. Hacen que los bucles terminen cuando se deja de satisfacer una **condición**
+Las variables de control (acumuladores) son aquellas que deben ser **inicializadas** y **actualizadas** de manera uniforme.
+Hacen que los bucles terminen cuando se deja de satisfacer una **condición**.
 
 ```C
 // Por convención se le llama a la variable de control i. De necesitar más
@@ -51,9 +51,9 @@ int i;
 
 i = 0; // Inicializo la variable de control
 
-// Es importante saber cuando usar for, while y do while
-while (i < 10) // Es importante controlar que la condición no genere un bucle infinito
-    i++; // Nunca olvidar actualizar la variable de control para no generar bucle infinito
+// Es importante saber cuando usar for, while y do while.
+while (i < 10) // Controlar que la condición no genere bucles infinitos.
+    i++; // No olvidar actualizar la variable de control.
 
 // En el bucle anterior la variable de control tomará valores de 0 a 9
 ```
@@ -67,8 +67,8 @@ do
 {
     i++;
 } while(i <= 5);
-// La diferencia entre while y do while es que do while primero realiza una
-// iteración y luego hace la comparación.
+// Diferencia clave: do-while realiza al menos una iteración antes de comprobar la condición.
+
 
 // En el bucle anterior la variable de control tomará valores de 3 a 5
 ```
@@ -76,9 +76,8 @@ do
 ```C
 int i;
 
-// En el bucle for se definen los tres pasos subrallados en negrita:
-// definición, condición, actualización
-// Pero la declaración de la variable debe estar afuera
+// En un bucle for definimos los tres pasos: inicialización, condición y actualización.
+// Pero la declaración de la variable debe estar fuera del for para evitar problemas.
 
 // No hacer: for(int i = 0; i < 3; i++)
 
@@ -93,6 +92,13 @@ for(i = 0; i < 10; i += 2)
     // ...
 
 // En el bucle anterior la variable de control tomará los valores: 0, 2, 4, 6 y 8
+
+
+
+// Usar for cuando sabemos la cantidad exacta de veces que queremos realizar lo
+// que está dentro del búcle.
+// De lo contrario usar while o do-while. Generalmente se usa do-while para
+// entrada de datos.
 ```
 
 ## Condiciones de igualdad
@@ -102,13 +108,13 @@ Las condiciones de igualdad son diferentes a las asignaciones.
 ```C
 int numero;
 
-numero = 3; // uso =
+numero = 3; // Uso de "=" para asignar.
 
-if(numero == 3) // uso ==
+if(numero == 3) // Uso de "==" para comparar.
     printf("El número es igual a 3");
 
-// " = " es para asignar
-// " == " es para comparar
+// " = " es para asignar valores.
+// " == " es para comparar valores.
 ```
 
 ## Funciones
@@ -127,17 +133,19 @@ tipo nombre_de_funcion(parametros)
 }
 ```
 
--   Tipo: el tipo de dato a retornar (int, void, float, double, long, etc.).
+### Componentes de una función
 
--   Nombre_de_funcion: el nombre la función, util para saber qué hace la función y luego ser llamada en otro lugar del programa.
+-   **Tipo**: el tipo de dato a retornar (int, void, float, double, long, etc.).
 
--   Parametros: variables que se van a utilizar en esa función y que se consiguen externamente a la función.
+-   **Nombre**: el nombre la función, util para saber qué hace la función y luego ser llamada en otro lugar del programa.
 
--   Cuerpo de la funcion: instrucciones propias de la función.
+-   **Parámetros**: variables que se van a utilizar en esa función y que se consiguen externamente a la función.
 
--   Retorno de la funcion: el valor que va a devolver como resultado la función.
+-   **Cuerpo**: instrucciones propias de la función.
 
-Las funciones que no tendrán interacción con el usuario y que su objetivo sea devolver algún valor entonces deberán tener un tipo definido (diferente de void).
+-   **Retorno**: el valor que va a devolver como resultado la función.
+
+Las funciones que no tendrán interacción con el usuario y que su objetivo sea devolver algún valor deberán tener un tipo definido (diferente de void).
 
 Las funciones pueden tener diferentes cantidades de valores retornados según haga falta:
 
@@ -215,8 +223,8 @@ float promedio(float nota_1, float nota_2, float nota_3)
 
 ## Punteros
 
-Los punteros son tipos de variables en donde se guardan direcciones de memoria.
-**Importante:** no usar punteros para todo, solo para ingresos de datos o para devolver más de un valor por función.
+Los punteros almacenan direcciones de memoria, no valores directamente.
+**Importante**: No usar punteros para todo; su principal utilidad es manejar ingresos de datos y devolver múltiples valores desde una función.
 
 ```C
 #include <stdio.h>
@@ -224,14 +232,14 @@ Los punteros son tipos de variables en donde se guardan direcciones de memoria.
 int main()
 {
     int numero;
-    int *puntero; // Declaro el puntero
+    int *puntero; // Declaro un puntero.
 
     numero = 3;
 
-    puntero = &numero; // Al puntero le asigno la dirección de la variable numero
+    puntero = &numero; // Guardo la dirección de memoria de "numero" en el puntero.
 
-    printf("%i \n", *puntero); // Imprimo lo que hay en la dirección guardada en puntero
-    printf("%p \n", puntero); // Imprimo la dirección de memoria guardada en puntero
+    printf("%i\n", *puntero); // Imprime el valor contenido en esa dirección.
+    printf("%p\n", puntero); // Imprime la dirección de memoria.
 
     return 0;
 }
@@ -374,7 +382,7 @@ void cargar_datos(t_matriz matriz)
 
 ## Modularización
 
-El objetivo de modularizar es poder reutilizar el código y simplificar el código. Un módulo debe tener pocas instrucciones, e intentar que cada uno realice una acción específica (sin modularizar de más).
+Modularizar significa dividir el código en bloques (módulos) pequeños y reutilizables. Cada módulo debe realizar una tarea específica, lo que simplifica la lectura y mantenimiento del programa.
 
 ```C
 // Sugiero leer el código desde main
@@ -412,7 +420,7 @@ bool es_primo(int n)
 }
 
 // Calculo los numeros primos que hay entre 2 números
-void calcular_primos(int numero_1, int numero_2)
+void calcular_primos_entre(int numero_1, int numero_2)
 {
     int i;
 
@@ -426,7 +434,7 @@ int main()
     int numero_1, numero_2;
 
     ingresar_numeros(&numero_1, &numero_2);
-    calcular_primos(numero_1, numero_2);
+    calcular_primos_entre(numero_1, numero_2);
 
     return 0;
 }
