@@ -2,6 +2,6 @@
 
 ---
 
-Si no las leíste, te recomiendo leer [Buenas prácticas](https://github.com/jos-cabrera/Fundamentos-de-programacion/tree/main/Buenas%20pr%C3%A1cticas).
+Si no las leíste, te recomiendo leer [Buenas prácticas](../Buenas%20prácticas/).
 
-Primera parte: [Notas](https://github.com/jos-cabrera/Fundamentos-de-programacion/blob/main/Notas/README.md).
+Primera parte: [Notas](../Notas/).
