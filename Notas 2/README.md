@@ -9,10 +9,10 @@ Las cadenas son vectores de caracteres con un carácter especial NULO ('\0') al 
 ```C
 // Se pueden declarar de las siguientes formas:
 
-char cadena1[15] = "Hola Mundo 1";
-char cadena2[] = "Hola Mundo 2";
-char cadena3[20];
-char cadena4[] = {'h', 'o', 'l', 'a', ' ', 'm', 'u', 'n', 'd', 'o', '\0'};
+char cadena_1[15] = "Hola Mundo 1";
+char cadena_2[] = "Hola Mundo 2";
+char cadena_3[20];
+char cadena_4[] = {'h', 'o', 'l', 'a', ' ', 'm', 'u', 'n', 'd', 'o', '\0'};
 ```
 
 ```C
@@ -34,12 +34,12 @@ fflush(stdin);
 ```C
 strlen(cadena); // Devuelve la cantidad de caracteres (sin contar \0).
 strcpy(cadena_destino, "valor"); // Copia un nuevo valor en la cadena destino.
-strcat(cadena1, cadena2); // Concatena cadena2 al final de cadena1 (si hay espacio suficiente).
-strcmp(cadena1, cadena2); // Compara dos cadenas.
+strcat(cadena_1, cadena_2); // Concatena cadena_2 al final de cadena_1 (si hay espacio suficiente).
+strcmp(cadena_1, cadena_2); // Compara dos cadenas.
 // Retorna 0 si son iguales.
-// Retorna un valor positivo si cadena1 es mayor (antes en orden alfabético).
-// Retorna un valor negativo si cadena1 es menor.
-strstr(cadena2, cadena1); // Busca cadena1 dentro de cadena2.
+// Retorna un valor positivo si cadena_1 es mayor (antes en orden alfabético).
+// Retorna un valor negativo si cadena_1 es menor.
+strstr(cadena_2, cadena_1); // Busca cadena_1 dentro de cadena_2.
 // Retorna un puntero a la primera aparición o NULL si no se encuentra.
 ```
 
