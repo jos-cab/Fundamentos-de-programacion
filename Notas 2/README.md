@@ -152,6 +152,39 @@ if (archivo != NULL) // Verifico si se pudo abrir el archivo
 
 A demás `getchar()` es una funcion que detiene la ejecución del programa y espera a que el usuario teclee un caracter.
 
+## Registros
+
+También llamados estructuras, son tipo de datos que almacenan campos, y cada campo almacena datos del tipo declarado.
+
+```C
+struct alumno
+{
+	char nombre[30];
+	int padron;
+	int notas[3];
+	float promedio;
+	char mail[35];
+};
+```
+
+```C
+typedef struct
+{
+	char nombre[30];
+	int padron;
+	int notas[3];
+	float promedio;
+	char mail[35];
+} alumno;
+
+int main()
+{
+	alumno alumno_1; // Declaro un alumno
+
+	alumno_1.notas[0] = 7; // Defino la primera nota del alumno
+}
+```
+
 ---
 
 Si no las leíste, te recomiendo leer [Buenas prácticas](../Buenas%20prácticas/).
