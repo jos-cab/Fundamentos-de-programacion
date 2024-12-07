@@ -32,14 +32,14 @@ fflush(stdin);
 `<string.h>` es una biblioteca con funciones útiles para manipular cadenas.
 
 ```C
-strlen(cadena) // Devuelve la cantidad de caracteres (sin contar \0).
-strcpy(cadena_destino, "valor") // Copia un nuevo valor en la cadena destino.
-strcat(cadena1, cadena2) // Concatena cadena2 al final de cadena1 (si hay espacio suficiente).
-strcmp(cadena1, cadena2) // Compara dos cadenas.
+strlen(cadena); // Devuelve la cantidad de caracteres (sin contar \0).
+strcpy(cadena_destino, "valor"); // Copia un nuevo valor en la cadena destino.
+strcat(cadena1, cadena2); // Concatena cadena2 al final de cadena1 (si hay espacio suficiente).
+strcmp(cadena1, cadena2); // Compara dos cadenas.
 // Retorna 0 si son iguales.
 // Retorna un valor positivo si cadena1 es mayor (antes en orden alfabético).
 // Retorna un valor negativo si cadena1 es menor.
-strstr(cadena2, cadena1) // Busca cadena1 dentro de cadena2.
+strstr(cadena2, cadena1); // Busca cadena1 dentro de cadena2.
 // Retorna un puntero a la primera aparición o NULL si no se encuentra.
 ```
 
