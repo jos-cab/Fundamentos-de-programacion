@@ -182,6 +182,8 @@ int main()
 	alumno alumno_1; // Declaro un alumno
 
 	alumno_1.notas[0] = 7; // Defino la primera nota del alumno
+
+	return 0;
 }
 ```
 
