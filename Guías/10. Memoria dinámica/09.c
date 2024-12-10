@@ -14,16 +14,19 @@ char* cadena = malloc(strlen(cadena_aux) * sizeof(char) + 1);
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX 100
+
 int main()
 {
-	char cadena_aux[100];
+	char cadena_aux[MAX];
 	char *cadena;
 
 	printf("Ingrese una frase o palabra: ");
-	fgets(cadena_aux, 100, stdin);
+	fgets(cadena_aux, MAX, stdin);
 	fflush(stdin);
 
-	cadena = malloc(strlen(cadena_aux) * sizeof(char) + 1);
+	// Le sumo 1 para poder poner el \n
+	cadena = malloc((strlen(cadena_aux) + 1) * sizeof(char));
 
 	if (cadena != NULL)
 	{
