@@ -284,6 +284,17 @@ int main()
 }
 ```
 
+```C
+void ingresar_datos(int *numero_1, int *numero_2)
+{
+    printf("Ingrese un número: ");
+    scanf("%d", numero_1); // Es lo mismo que scanf("%d", &(*numero_1));
+
+    printf("Ingrese otro número: ");
+    scanf("%d", numero_2);
+}
+```
+
 ## Arreglos
 
 Los arreglos son estructuras en donde se pueden guardar datos como lo hacen las variables, pero de una forma ordenada y en mayor cantidad. Pueden ser de tamaño dinámico (se explicará más adelante) o estático, con máximos lógicos y físicos.
