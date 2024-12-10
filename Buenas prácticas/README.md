@@ -263,6 +263,40 @@ void obtener_mayor_digito_y_frecuencia(int numero,
 }
 ```
 
+13. Cerrar archivos una vez abiertos
+
+```C
+archivo = fopen("texto.txt", "r");
+
+fclose(archivo);
+```
+
+13. Definir un puntero en NULL y después asignarle memoria
+
+```C
+int *numero;
+
+numero = NULL;
+numero = malloc(sizeof(int));
+```
+
+14. Liberar memoria una vez utlizada
+
+```C
+int *numeros;
+int candiad_numeros
+
+numeros = NULL;
+cantidad_numeros = 4;
+
+numero = malloc(cantidad_numeros * sizeof(int));
+
+// Importante no hacer free de memoria que no fue asignada dinámicamente
+// Ni intentar liberar memoria que ya haya sido liberada.
+if (numero != NULL)
+    free(numero);
+```
+
 ---
 
 Ver [Notas](../Notas/) y [Notas 2](../Notas%202/) para más info.

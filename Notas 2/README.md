@@ -187,6 +187,36 @@ int main()
 }
 ```
 
+## Memoria dinámica
+
+Es necesario incluir `<stdlib.h>`.
+
+```C
+int *numeros;
+int cantidad_numeros;
+
+// Luego del ingreso de cantidad_numeros
+
+// Hago que numeros sea un vector de tamaño cantidad_numeros
+numeros = malloc(cantidad_numeros * sizeof(int));
+
+/*
+	Existen también:
+
+	calloc(): Solicita memoria inicializada en 0.
+	calloc(cantidad_numeros, sizeof(int))
+
+	realloc(): Cambia el tamaño de un bloque de memoria previamente asignado.
+	realloc(numeros, sizeof(int) * cantidad_numeros)
+*/
+
+if (numeros != NULL) // Me fijo si no hubo errores al asignar la memoria
+	free(numeros); // Importante liberar la memoria
+else
+	printf("No se pudo reservar la memoria");
+
+```
+
 ---
 
 Si no las leíste, te recomiendo leer [Buenas prácticas](../Buenas%20prácticas/).
