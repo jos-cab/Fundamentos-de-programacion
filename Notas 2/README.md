@@ -187,6 +187,34 @@ int main()
 }
 ```
 
+## Recursividad
+
+Se da la recursividad cuando una función se llama a si misma.
+Estas funciones tienen permitido tener más de un punto de retorno.
+
+```C
+int factorial(int n)
+{
+    if (n == 0)
+        return 1; // Caso base
+
+    return n * factorial(n - 1); // Vuevo a llamar a factorial
+
+	/*
+		n: 3
+		return 3 * factorial(2)
+			n: 2
+			return 2 * factorial(1)
+				n: 1
+				return 1 * factorial(0)
+					n: 0
+						return 1
+
+		1 * 1 * 2 * 3 = 6
+	*/
+}
+```
+
 ## Memoria dinámica
 
 Es necesario incluir `<stdlib.h>`.
