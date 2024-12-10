@@ -242,7 +242,6 @@ if (numeros != NULL) // Me fijo si no hubo errores al asignar la memoria
 	free(numeros); // Importante liberar la memoria
 else
 	printf("No se pudo reservar la memoria");
-
 ```
 
 ---
