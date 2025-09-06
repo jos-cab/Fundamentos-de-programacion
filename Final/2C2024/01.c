@@ -69,6 +69,8 @@ int obtener_promedio_stock(t_libros libros, int ML)
 {
 	int i, promedio;
 
+	promedio = 0;
+
 	for (i = 0; i < ML; i++)
 		promedio += libros[i].stock;
 
