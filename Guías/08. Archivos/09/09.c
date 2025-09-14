@@ -50,7 +50,7 @@ void leer_empleados(lista_empleados empleados, int *ML)
 
 	while (!feof(archivo_empleados))
 	{
-		fscanf(archivo_empleados, "%s %s %hu %hu %hu %hu %hu %hu %hu %f",
+		fscanf(archivo_empleados, "%s %s %hu %hu %hu %hu %hu %hu %f",
 			   empleados[i].apellido,
 			   empleados[i].nombre,
 			   &empleados[i].dia_nacimiento,
