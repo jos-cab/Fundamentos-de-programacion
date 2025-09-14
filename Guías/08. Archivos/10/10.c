@@ -80,17 +80,18 @@ void imprimir_alumnos_por_año_y_division(lista_alumnos_t alumnos, int ML)
 void imprimir_mejor_promedio(lista_alumnos_t alumnos, int ML)
 {
 	alumno alumno_mejor_promedio;
+	int i;
 
 	alumno_mejor_promedio = alumnos[0];
 
-	for (int i = 1; i < ML; i++)
+	for (i = 1; i < ML; i++)
 		if (alumnos[i].promedio > alumno_mejor_promedio.promedio)
 			alumno_mejor_promedio = alumnos[i];
 
 	printf("\nEl/La alumno/a con mejor promedio es: %s", alumno_mejor_promedio.nombre);
 }
 
-void guardar_cantdiad_alumnos_por_año_y_division(lista_alumnos_t alumnos, int ML)
+void guardar_cantidad_alumnos_por_año_y_division(lista_alumnos_t alumnos, int ML)
 {
 	FILE *archivo_alumnos;
 	int i, año, division, cantidad_alumnos;
@@ -128,7 +129,7 @@ int main()
 	leer_alumnos(alumnos, &ML);
 	imprimir_alumnos_por_año_y_division(alumnos, ML);
 	imprimir_mejor_promedio(alumnos, ML);
-	guardar_cantdiad_alumnos_por_año_y_division(alumnos, ML);
+	guardar_cantidad_alumnos_por_año_y_division(alumnos, ML);
 
 	return 0;
 }
