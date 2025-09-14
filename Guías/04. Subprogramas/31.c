@@ -39,29 +39,48 @@ int obtener_edad(int fecha_nacimiento)
 	return edad;
 }
 
-void imprimir_participante_y_mejor_marca()
+void ingresar_datos_participante(int *participante, int *fecha_nacimiento, int *marca)
 {
-	int mejor_marca, mejor_marca_participante, participante, fecha_nacimiento, salto, marca, i, j;
+	int salto, j;
+
+	printf("Ingrese el numero de participante: ");
+	scanf("%d", participante);
+
+	printf("Ingrese la fecha de nacimiento (dd/mm/aaaa): ");
+	scanf("%d", fecha_nacimiento);
+
+	*marca = 0;
+
+	for (j = 0; j < CANTIDAD_SALTOS; j++)
+	{
+		printf("Ingrese la cantidad en metros del salto %d: ", j + 1);
+		scanf("%d", &salto);
+
+		*marca += salto;
+	}
+}
+
+void imprimir_datos_participante(int participante, int fecha_nacimiento, int marca)
+{
+	printf("Participante: %d\n", participante);
+	printf("Edad: %d\n", obtener_edad(fecha_nacimiento));
+	printf("Marca total: %d\n", marca);
+}
+
+void imprimir_mejor_participante(int mejor_marca_participante)
+{
+	printf("\nEl mejor participante es: %d\n", mejor_marca_participante);
+}
+
+void procesar_participantes()
+{
+	int mejor_marca, mejor_marca_participante, participante, fecha_nacimiento, marca, i;
 
 	mejor_marca = 0;
 
 	for (i = 0; i < CANTIDAD_PARTICIPANTES; i++)
 	{
-		marca = 0;
-
-		printf("Ingrese el numero de participante: ");
-		scanf("%d", &participante);
-
-		printf("Ingrese la fecha de nacimiento (dd/mm/aaaa): ");
-		scanf("%d", &fecha_nacimiento);
-
-		for (j = 0; j < CANTIDAD_SALTOS; j++)
-		{
-			printf("Ingrese la cantidad en metros del salto %d: ", j + 1);
-			scanf("%d", &salto);
-
-			marca += salto;
-		}
+		ingresar_datos_participante(&participante, &fecha_nacimiento, &marca);
 
 		if (marca > mejor_marca)
 		{
@@ -69,17 +88,15 @@ void imprimir_participante_y_mejor_marca()
 			mejor_marca_participante = participante;
 		}
 
-		printf("Participante: %d\n", participante);
-		printf("Edad: %d\n", obtener_edad(fecha_nacimiento));
-		printf("Marca total: %d\n", marca);
+		imprimir_datos_participante(participante, fecha_nacimiento, marca);
 	}
 
-	printf("\nEl mejor participante es: %d\n", mejor_marca_participante);
+	imprimir_mejor_participante(mejor_marca_participante);
 }
 
 int main()
 {
-	imprimir_participante_y_mejor_marca();
+	procesar_participantes();
 
 	return 0;
 }
