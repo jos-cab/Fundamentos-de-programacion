@@ -8,7 +8,10 @@ del archivo de entrada.
 
 long long obtener_factorial(int numero)
 {
-    long long factorial = 1;
+    long long factorial;
+    int i;
+
+    factorial = 1;
 
     for (int i = 2; i <= numero; i++)
         factorial *= i;
