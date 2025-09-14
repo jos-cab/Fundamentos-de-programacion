@@ -26,9 +26,12 @@ float elevado(float base, int exponente)
 
 float factorial(float n)
 {
-	float resultado = 1;
+	float resultado;
+	int i;
 
-	for (int i = 2; i <= n; i++)
+	resultado = 1;
+
+	for (i = 2; i <= n; i++)
 		resultado *= (float)i;
 
 	return resultado;
