@@ -79,7 +79,7 @@ void mostrar_cantidad_productos_vendidos(lista_productos_t productos, lista_vent
 {
 	int i;
 
-	printf("Cantidad de productos vendidos por producto:\n");
+	printf("Cantidad de productos vendidos por producto:\n\n");
 
 	for (i = 0; i < ML_ventas_por_producto; i++)
 		printf("%i %s %i\n", productos[i].codigo, productos[i].descripcion, ventas_por_producto[i]);
@@ -113,6 +113,7 @@ int buscar_producto(lista_productos_t productos, int ML_productos, int codigo)
 	bool encontrado;
 
 	i = 0;
+	encontrado = false;
 
 	while ((!encontrado) && (i < ML_productos))
 	{
@@ -165,7 +166,7 @@ void mostrar_productos_faltantes(lista_productos_faltantes_t productos_faltantes
 
 	printf("Productos faltantes:\n");
 
-	for (int i = 0; i < ML_productos_faltantes; i++)
+	for (i = 0; i < ML_productos_faltantes; i++)
 		printf("%i %s\n", productos_faltantes[i].codigo, productos_faltantes[i].descripcion);
 }
 
