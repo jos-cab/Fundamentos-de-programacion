@@ -50,12 +50,13 @@ void mostrar_patente_mas_viajes(lista_viajes_t viajes, int ML)
 {
 	int patente_actual, cantidad_viajes_actual;
 	int patente_mas_viajes, mayor_cantidad_viajes;
+	int i;
 
 	patente_mas_viajes = viajes[0].patente;
 	mayor_cantidad_viajes = 1;
 	cantidad_viajes_actual = 1;
 
-	for (int i = 1; i < ML; i++)
+	for (i = 1; i < ML; i++)
 	{
 		if (viajes[i].patente == viajes[i - 1].patente)
 		{
@@ -84,10 +85,11 @@ void mostrar_patente_mas_viajes(lista_viajes_t viajes, int ML)
 void mostrar_viajes_cordoba(lista_viajes_t viajes, int ML)
 {
 	int viajes_cordoba;
+	int i;
 
 	viajes_cordoba = 0;
 
-	for (int i = 0; i < ML; i++)
+	for (i = 0; i < ML; i++)
 		if (strcmp(viajes[i].destino, "Cordoba") == 0)
 			viajes_cordoba++;
 
@@ -98,9 +100,10 @@ void guardar_kg_total_por_camion(lista_viajes_t viajes, int ML)
 {
 	FILE *archivo_kg;
 	int i, patente_anterior;
-	float kg_total = 0;
+	float kg_total;
 
 	patente_anterior = -1;
+	kg_total = 0;
 	archivo_kg = fopen("kg_total_por_camion.txt", "w");
 
 	for (i = 0; i < ML; i++)
