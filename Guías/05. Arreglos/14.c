@@ -43,7 +43,7 @@ void vaciar_registro(TRegistro registro)
 void llenar_registro(TRegistro registro, TVentas ventas, int mlventas)
 {
     // categoria y destino son variables para hacer más legible el código
-    int i, categoria, destino; 
+    int i, categoria, destino;
 
     for (i = 0; i < mlventas; i++)
     {
@@ -75,18 +75,20 @@ void mostrar_registro(TRegistro registro)
 }
 
 void mostrar_cantidad_destino_categoria(TCantDestino cantidad_pasajeros_destino,
-                                    TCantCategoria cantidad_pasajeros_categoria)
+                                        TCantCategoria cantidad_pasajeros_categoria)
 {
     int i;
 
     printf("\n");
     printf("Cantidad de pasajeros por destino\n");
+
     for (i = 0; i < MFDESTINO; i++)
         printf("%d ", cantidad_pasajeros_destino[i]);
 
     printf("\n");
     printf("Cantidad de pasajeros por categoría\n");
-    for (i = 0; i < MFDESTINO; i++)
+
+    for (i = 0; i < MFCATEGORIA; i++)
         printf("%d ", cantidad_pasajeros_categoria[i]);
 }
 
@@ -95,17 +97,17 @@ void obtener_cantidad_pasajeros_destino(TRegistro registro,
 {
     int i, j;
 
-    for (i = 0; i < MFCATEGORIA; i++)
+    for (i = 0; i < MFDESTINO; i++)
     {
         cantidad_pasajeros_destino[i] = 0;
 
-        for (j = 0; j < MFDESTINO; j++)
+        for (j = 0; j < MFCATEGORIA; j++)
             cantidad_pasajeros_destino[i] += registro[j][i];
     }
 }
 
-int obtener_cantidad_pasajeros_categoria(TRegistro registro,
-                                    TCantCategoria cantidad_pasajeros_categoria)
+void obtener_cantidad_pasajeros_categoria(TRegistro registro,
+                                          TCantCategoria cantidad_pasajeros_categoria)
 {
     int i, j;
 
@@ -126,8 +128,8 @@ void mostrar_mayor_menor_cantidad_pasajeros_destino(int mayor, int menor)
 }
 
 void obtener_mayor_menor_cantidad_pasajeros_destino(
-                                    TCantCategoria cantidad_pasajeros_destino,
-                                    int *mayor_cantidad, int *menor_cantidad)
+    TCantCategoria cantidad_pasajeros_destino,
+    int *mayor_cantidad, int *menor_cantidad)
 {
     int i, indice_mayor, indice_menor;
 
@@ -158,12 +160,12 @@ int main()
     TRegistro registro;
 
     // categoria: 1 = a, 2 = b, 3 = c, 4 = d. destino: 1 - 250
-    TVentas ventas = {{1, 1}, 
-                      {1, 1}, 
-                      {2, 3}, 
-                      {3, 2}, 
-                      {2, 1}, 
-                      {3, 1}, 
+    TVentas ventas = {{1, 1},
+                      {1, 1},
+                      {2, 3},
+                      {3, 2},
+                      {2, 1},
+                      {3, 1},
                       {2, 2}};
 
     TCantDestino cantidad_pasajeros_destino;
@@ -176,11 +178,11 @@ int main()
     llenar_registro(registro, ventas, mlventas);
     mostrar_registro(registro);
 
-    obtener_cantidad_pasajeros_categoria(registro, 
+    obtener_cantidad_pasajeros_categoria(registro,
                                          cantidad_pasajeros_categoria);
     obtener_cantidad_pasajeros_destino(registro, cantidad_pasajeros_destino);
 
-    mostrar_cantidad_destino_categoria(cantidad_pasajeros_destino, 
+    mostrar_cantidad_destino_categoria(cantidad_pasajeros_destino,
                                        cantidad_pasajeros_categoria);
 
     obtener_mayor_menor_cantidad_pasajeros_destino(cantidad_pasajeros_destino,
